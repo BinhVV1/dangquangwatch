@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\CategoryDetail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,22 +16,54 @@ class HomeController extends Controller
      *
      * @return void
      */
+    protected $category;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->category = Category::join('category_detail','category.id', '=', 'category_detail.id_category')
+        ->get()->toArray();
     }
 
-    public function product()
+    public function product(Request $request)
     {
-        $data = Product::get()->toArray();
-        return view('admin.product', compact('data'));
+        $query = Product::query();
+
+        if ($request->has('sex') && $request->input('sex') != '') {
+            $query->where('sex', $request->input('sex'));
+        }
+
+        if ($request->has('trademark') && $request->input('trademark') != '') {
+            $query->where('trademark', $request->input('trademark'));
+        }
+
+        if ($request->has('material') && $request->input('material') != '') {
+            $query->where('material', $request->input('material'));
+        }
+
+        $data = $query->get()->toArray();
+
+        return view('admin.product', ['category' => $this->category, 'data' => $data]);
     }
 
-    public function addOrEditProduct($link)
+    public function addProduct()
     {
-        $data = Product::where('link', $link)->get()->toArray();
-        return view('admin.addOrEditProduct', compact('data'));
+        $category = Category::join('category_detail','category.id', '=', 'category_detail.id_category')
+        ->get()->toArray();
+
+        return view('admin.addOrEditProduct', ['category' => $this->category]);
     }
+
+    public function editProduct($id)
+    {
+        $category = Category::join('category_detail','category.id', '=', 'category_detail.id_category')
+        ->get()->toArray();
+
+        $data = Product::where('id', $id)->get()->toArray();
+
+        return view('admin.addOrEditProduct', ['category' => $this->category, 'data' => $data]);
+    }
+
 
     public function deleteProduct($id)
     {
@@ -68,22 +102,20 @@ class HomeController extends Controller
         return redirect()->back()->with('error', 'Xóa Ảnh Thất bại! Vui Lòng Thử Lại');
     }
 
-    
     public function postAddOrEditProduct(Request $request)
     {
-        $existingProduct = Product::where('link', $request->input('link'))->first();
-        if ($existingProduct) {
-            return redirect()->back()->with('error', 'Link đã tồn tại. Vui Lòng Sử Dụng Link Khác')->withInput();
-        }
-
         // Create or update the product
         $productData = [
             'name' => $request->input('name'),
-            'link' => $request->input('link'),
+            'code' => $request->input('code'),
+            'price' => $request->input('price'),
+            'sex' => $request->input('sex'),
+            'trademark' => $request->input('trademark'),
+            'material' => $request->input('material'),
+            'information' => $request->input('information'),
             'subtitle' => $request->input('subtitle'),
-            'category' => $request->input('category'),
-            'tags' => $request->input('tags'),
             'description' => $request->input('description'),
+            'link' => $request->input('link'),            
         ];
 
         if ($request->file('images_main')) {

@@ -35,7 +35,20 @@
   h5 {
     font-family: "Raleway", sans-serif
   }
-
+  .form-select {
+        /* Định dạng cho dropdown select */
+        padding: .375rem 2.25rem .375rem .75rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        vertical-align: middle;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width:100%;
+    }
   .w3-bar-block>a:hover {
     background-color: blue;
     color: white;
@@ -70,7 +83,7 @@
     <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i
         class="fa fa-bars"></i> Menu</button>
     <span class="w3-bar-item w3-right">
-      THỰC PHẨM XUÂN PHONG
+      1993Watch
     </span>
   </div>
 
@@ -161,6 +174,11 @@
         .catch(error => {
             console.log('');
         });
+      ClassicEditor
+      .create(document.querySelector('#editor1'))
+      .catch(error => {
+          console.log('');
+      });
   });
 
 </script>

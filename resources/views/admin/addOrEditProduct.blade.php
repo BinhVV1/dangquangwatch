@@ -15,53 +15,74 @@
    <div class='col-lg-12' style="padding: 16px; width:100%">
     <section class="tf-section flat-blog" style='padding:0'>
         <form action="/admin/postAddOrEditProduct/" class="form" method="post" enctype="multipart/form-data">
-            @csrf
+            @csrf 
             @if(isset($data) && !empty($data))
                 <input type="hidden" name='id' value='{{ $data[0]['id'] }}'>
             @else
                 @php $data = ''; @endphp
             @endif
-            
+
             <div class="col-sm-12" style="padding:15px; gap:10px; border-bottom:1px solid rgb(200, 200, 200);">
                 <div class="col-sm-2" style='font-weight:bold'>Tên Sản Phẩm:</div>
                 <div class="col-sm-6">
                     <input type="text" name='name' class='form-control' value='{{ $data ? $data[0]['name'] : old('name') }}' required style="border:1px solid gray; color:gray; background:white">
                 </div>
-                <div class="col-sm-3" style='color:gray'> Ví dụ: Chân Gà Siêu Cay...</div>
+                <div class="col-sm-3" style='color:gray'> Ví dụ: Seiko 5 Field Sports Style SRPH29K1 – Nam – Automatic – Mặt số 39.4mm, chống nước 10ATM, bộ máy In-House</div>
             </div>
-
             <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
-                <div class="col-sm-2" style='font-weight:bold'>Link Sản Phẩm:</div>
+                <div class="col-sm-2" style='font-weight:bold'>Mã Sản Phẩm:</div>
+                <div class="col-sm-6">
+                    <input type="text" name='code' id='code' class='form-control' value='{{ $data ? $data[0]['code'] : old('code') }}' required style="border:1px solid gray; color:gray; background:white">
+                </div>
+                <div class="col-sm-3" style='color:gray'> Ví dụ: SRPH29K1</div>
+            </div>
+            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'>Giá Sản Phẩm:</div>
+                <div class="col-sm-6">
+                    <input type="text" name='price' class='form-control' value='{{ $data ? $data[0]['price'] : old('price') }}' required style="border:1px solid gray; color:gray; background:white">
+                </div>
+                <div class="col-sm-3" style='color:gray'> Ví dụ: 9.000.000</div>
+            </div>
+            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'>Loại:</div>
+                <div class="col-sm-6" style='display:flex; gap:4px'>
+                    @foreach($category as $value) 
+                        @if ($value['id_category'] == 1) 
+                            <input style='margin:0;' type="radio" name="sex" required value="{{ $value['id'] }}" {{ ($data && $data[0]['sex'] ===  $value['id']) || old('sex') == $value['id']  ? 'checked' : '' }}><span style='margin-right:10px;'>{{ $value['name_category'] }} </span>
+                        @endif
+                    @endforeach 
+                </div>
+            </div>
+            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'>Thương Hiệu:</div>
+                <div class="col-sm-6">
+                    <select class="form-select" name="trademark" required>
+                        @foreach($category as $value) 
+                            @if ($value['id_category'] == 2) 
+                                <option value="{{ $value['id'] }}" {{ ($data && $data[0]['trademark'] === $value['id']) || old('trademark') == $value['id'] ? 'selected' : '' }}>{{ $value['name_category'] }}</option>
+                            @endif
+                        @endforeach 
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'>Chất Liệu Dây:</div>
+                <div class="col-sm-6">
+                    <select class="form-select" name="material" required>
+                        @foreach($category as $value) 
+                            @if ($value['id_category'] == 3) 
+                                <option value="{{ $value['id'] }}" {{ ($data && $data[0]['material'] === $value['id']) || old('material') == $value['id'] ? 'selected' : '' }}>{{ $value['name_category'] }}</option>
+                            @endif
+                        @endforeach 
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12" style="padding:15px; gap:10px; border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'>Link Video:</div>
                 <div class="col-sm-6">
                     <input type="text" name='link' class='form-control' value='{{ $data ? $data[0]['link'] : old('link') }}' required style="border:1px solid gray; color:gray; background:white">
                 </div>
-                <div class="col-sm-3" style='color:gray'> Ví dụ: chan-ga-sieu-cay ...</div>
             </div>
-
-            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
-                <div class="col-sm-2" style='font-weight:bold'>Mô tả:</div>
-                <div class="col-sm-6">
-                    <textarea class="form-control" name='subtitle' rows="2" id="comment" required style="border:1px solid gray; color:gray; background:white">{{ $data ? $data[0]['subtitle'] : old('subtitle') }}</textarea>
-                </div>
-                <div class="col-sm-3" style='color:gray'> Ví dụ: Chân gà với lớp da mềm, gân giòn, khi nhai sẽ có cảm giác dai giòn cực đã. ...</div>
-            </div>
-
-            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
-                <div class="col-sm-2" style='font-weight:bold'>Danh Mục:</div>
-                <div class="col-sm-6">
-                    <input type="text" name='category' class='form-control' value='{{ $data ? $data[0]['category'] : old('category') }}' required style="border:1px solid gray; color:gray; background:white">
-                </div>
-                <div class="col-sm-3" style='color:gray'> Ví dụ: Thực Phẩm ...</div>
-            </div>
-
-            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
-                <div class="col-sm-2" style='font-weight:bold'>Thẻ:</div>
-                <div class="col-sm-6">
-                    <input type="text" name='tags' class='form-control' value='{{ $data ? $data[0]['tags'] : old('tags') }}' required style="border:1px solid gray; color:gray; background:white">
-                </div>
-                <div class="col-sm-3" style='color:gray'> Ví dụ: HOT, NEW, Chân gà, Ớt Đỏ ...</div>
-            </div>
-
             <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
                 <div class="col-sm-2" style='font-weight:bold'>Ảnh Chính:</div>
                 <div class="col-sm-6">
@@ -90,9 +111,34 @@
                 </div>
                 <div class="col-sm-3" style='color:gray'> Chọn danh sách ảnh khác của sản phẩm </div>
             </div>
-
             <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
-                <div class="col-sm-2" style='font-weight:bold'>Mô tả thông tin chi tiết sản phẩm:</div>
+                <div class="col-sm-2" style='font-weight:bold'>Mô tả:</div>
+                <div class="col-sm-6">
+                    <textarea class="form-control" name='subtitle' rows="2" id="comment" required style="border:1px solid gray; color:gray; background:white">{{ $data ? $data[0]['subtitle'] : old('subtitle') }}</textarea>
+                </div>
+                <div class="col-sm-3" style='color:gray'> Ví dụ: Mẫu đồng hồ nam Casio A158WA-1DF với kiểu dáng vuông huyền thoại...</div>
+            </div>
+            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'>Thông tin sản phẩm:</div>
+                <div class="col-sm-10">
+                    <textarea id="editor1" name="information" style="height:500px">{{ $data ? $data[0]['information'] : (old('information') ? old('information') : '<p><strong>Thương hiệu</strong>: <br>
+                        <strong>Số hiệu sản phẩm</strong>: <br>
+                        <strong>Xuất xứ</strong>: <br>
+                        <strong>Giới tính</strong>: <br>
+                        <strong>Kính</strong>: <br>
+                        <strong>Máy</strong>: <br>
+                        <strong>Bảo hành</strong>: <br>
+                        <strong>Đường kính mặt số</strong>: <br>
+                        <strong>Dây đeo</strong>: <br>
+                        <strong>Màu mặt số</strong>: <br>
+                        <strong>Chống nước</strong>: <br>
+                        <strong>Chức năng</strong>: <br>
+                        <strong>Nơi sản xuất</strong>: <br>
+                        </p>') }}</textarea>
+                </div>
+            </div>
+            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'>Chi tiết sản phẩm:</div>
                 <div class="col-sm-10">
                     <textarea id="editor" name="description" style="height:500px">{{ $data ? $data[0]['description'] : old('description') }}</textarea>
                 </div>
@@ -109,16 +155,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var errorMessage = document.getElementById('error-message');
 
-    // Hiển thị thông báo nếu tồn tại
     if (errorMessage) {
         errorMessage.style.display = 'block';
-
-        // Tự động tắt sau 5 giây
         setTimeout(function() {
             errorMessage.style.display = 'none';
             errorMessage.style.opacity = 0;
         }, 5000);
-    }
+    }    
 });
 </script>
 @endsection

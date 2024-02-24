@@ -25,25 +25,25 @@
                         <div class="flat-tabs card-media media" style="display: flex; flex-direction: column; align-items:center;">                                 
                             <div class="content-tab content-img">
                                 <div class="content-inner tab-content" style="width: 100%; height: 100%; display: flex; padding:15px 0; align-items: center; justify-content: center;">
-                                    <img src="{{ asset('storage/images-product/' . basename($product[0]['images_main'])) }}" alt="">
+                                    <img src="{{ asset('storage/app/public/images-product/' . basename($product[0]['images_main'])) }}" alt="">
                                 </div>
                                 @if ($product[0]['images'])
                                     @foreach(explode(',', $product[0]['images']) as $value)
                                         <div class="content-inner tab-content" style="width: 100%; height: 100%; display: flex; padding:15px 0; align-items: center; justify-content: center;">
-                                            <img src="{{ asset('storage/images-product/' . basename($value)) }}" alt="">
+                                            <img src="{{ asset('storage/app/public/images-product/' . basename($value)) }}" alt="">
                                         </div>
                                     @endforeach   
                                 @endif                         
                             </div>
                             <ul id='slide_product' class="menu-tab menu-img" style="width:100%; overflow: auto;">
                                 <li class="item-title">
-                                    <img src="{{ asset('storage/images-product/' . basename($product[0]['images_main'])) }}" alt="">
+                                    <img src="{{ asset('storage/app/public/images-product/' . basename($product[0]['images_main'])) }}" alt="">
                                 </li>
                                 @if ($product[0]['images'])
                                     @foreach(explode(',', $product[0]['images']) as $value)
                                         
                                         <li class="item-title">
-                                            <img src="{{ asset('storage/images-product/' . basename($value)) }}" alt="">
+                                            <img src="{{ asset('storage/app/public/images-product/' . basename($value)) }}" alt="">
                                         </li>
                                     @endforeach
                                 @endif 
@@ -110,7 +110,7 @@
                                             <a href="/san-pham/{{ $value['link'] }}" >
                                                 <div class="images hover-style">
                                                     <div style="width: 100%; height: 100%; display: flex;  align-items: center; justify-content: center;">
-                                                        <img style="max-width: 100%; max-height: 100%;" src="{{ asset('storage/images-product/' . basename($value['images_main'])) }}" alt="images">
+                                                        <img style="max-width: 100%; max-height: 100%;" src="{{ asset('storage/app/public/images-product/' . basename($value['images_main'])) }}" alt="images">
                                                     </div>                                               
                                                     <div class="tag-text"> NEW </div>                                             
                                                 </div>

@@ -27,7 +27,7 @@
                             <a href="/san-pham/{{ $value['link'] }}" >
                                 <div class="images hover-style">
                                     <div style="width: 100%; height: 100%; display: flex;  align-items: center; justify-content: center;">
-                                        <img style="max-width: 100%; max-height: 100%;" src="{{ asset('storage/images-product/' . basename($value['images_main'])) }}" alt="images">
+                                        <img style="max-width: 100%; max-height: 100%;" src="{{ asset('storage/app/public/images-product/' . basename($value['images_main'])) }}" alt="images">
                                     </div> 
                                     
                                     <div class="tag-text style2"> 

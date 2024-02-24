@@ -183,7 +183,7 @@
                     <div class="box-arrivals flex hover-img2">
                         <div class="images img-style2">
                             <a href="/san-pham/{{ $item['link'] }}/" style="padding: 5px 30px;">
-                                <img src="{{ asset('storage/images-product/' . basename($item['images_main'])) }}" alt="images">
+                                <img src="{{ asset('storage/app/public/images-product/' . basename($item['images_main'])) }}" alt="images">
                             </a>
                         </div>
                         <div class="content">

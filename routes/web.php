@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +40,8 @@ Route::get('/tin-tuc', function () {
 Auth::routes();
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
-Route::get('/admin/{link}/', [App\Http\Controllers\HomeController::class, 'addOrEditProduct'])->name('addOrEditProduct');
+Route::get('/admin/them-san-pham/', [App\Http\Controllers\HomeController::class, 'addProduct'])->name('addProduct');
+Route::get('/admin/sua-san-pham/{id}', [App\Http\Controllers\HomeController::class, 'editProduct'])->name('editProduct');
 Route::post('/admin/postAddOrEditProduct/', [App\Http\Controllers\HomeController::class, 'postAddOrEditProduct'])->name('postAddOrEditProduct');
 Route::get('/admin/delete/{id}', [App\Http\Controllers\HomeController::class, 'deleteProduct'])->name('deleteProduct');
 Route::get('/admin/delete-images/{id}/{value}', [App\Http\Controllers\HomeController::class, 'deleteImage'])->name('deleteImage');
