@@ -128,11 +128,11 @@
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-16 w3-light-grey">
-      <div class="w3-container w3-dark-grey w3-padding-32">
+      <div class="w3-container w3-dark-grey w3-padding-32"  style='background:#DCCCBD !important;'>
         <div class="w3-row">
           <div class="w3-container w3-third">
           </div>
-          <div class="w3-container w3-third" style="text-align:center;text-transform: uppercase;font-size:12pt;">
+          <div class="w3-container w3-third" style="text-align:center;text-transform: uppercase;font-size:12pt; color:black !important">
             <b>management page</b>
           </div>
           <div class="w3-container w3-third">

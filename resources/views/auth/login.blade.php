@@ -42,7 +42,7 @@
                 <div class="particles-bg" id="particles-js">
                     <div class="content-detail">
                         <!-- Login form -->
-                        <form action="{{ route('login') }}" class="login-form" method="post">
+                        <form action="{{ route('login') }}" class="login-form" method="post" style='background:#DCCCBD'>
                             @csrf
                             <div class="imgcontainer">
                                 <img src="{{ asset('assets/images/logo-01.png') }}" style='width:80%' alt="Avatar" class="avatar">
@@ -50,7 +50,7 @@
                             <div class="input-control">
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input placeholder="Nhập Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        <input placeholder="Nhập Email" id="email" style='background:#F4E5D7' type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-12">
-                                        <input placeholder="Nhập Pass" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                        <input placeholder="Nhập Pass" id="password" type="password" style='background:#F4E5D7' class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -69,18 +69,9 @@
                                     </div>
                                 </div>
                                 <div class="login-btns" style='width:100%'>
-                                    <button type="submit" name='login'>Xác Nhận</button>
+                                    <button type="submit" name='login' style='background:black;'>Xác Nhận</button>
                                 </div>
-                                <div class="division-lines">
-                                    <p>or login with</p>
-                                </div>
-                                <div class="login-with-btns">
-                                    <button type="button" class="google"><i class="fab fa-google"></i></button>
-                                    <button type="button" class="facebook"><i class="fab fa-facebook-f"></i></button>
-                                    <button type="button" class="twitter"><i class="fab fa-twitter"></i></button>
-                                    <button type="button" class="linkedin"><i class="fab fa-linkedin-in"></i></button>
-                                    <span class="already-acc">Nếu bạn quên tài khoản, vui lòng vui hệ với nhà cung cấp dịch vụ</span>
-                                </div>
+                               
                             </div>
                         </form>
                     </div>

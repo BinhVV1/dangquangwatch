@@ -41,24 +41,22 @@ class HomeController extends Controller
             $query->where('material', $request->input('material'));
         }
 
-        $data = $query->get()->toArray();
+        $perPage = 30;
+        $data = $query->paginate($perPage);
 
-        return view('admin.product', ['category' => $this->category, 'data' => $data]);
+        return view('admin.product', [
+            'category' => $this->category,
+            'data' => $data,
+        ]);
     }
 
     public function addProduct()
     {
-        $category = Category::join('category_detail','category.id', '=', 'category_detail.id_category')
-        ->get()->toArray();
-
         return view('admin.addOrEditProduct', ['category' => $this->category]);
     }
 
     public function editProduct($id)
     {
-        $category = Category::join('category_detail','category.id', '=', 'category_detail.id_category')
-        ->get()->toArray();
-
         $data = Product::where('id', $id)->get()->toArray();
 
         return view('admin.addOrEditProduct', ['category' => $this->category, 'data' => $data]);

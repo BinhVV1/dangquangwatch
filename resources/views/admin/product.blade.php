@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="content" style="width:100%;overflow: hidden;">
                                         <h3 style='display:flex; justify-content:center; margin:10px 0px;'>
-                                            <a href="/admin/sua-san-pham/{{ $item['id'] }}" style='width:100%;color:#c80000; font-size:13px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;'>
+                                            <a href="/admin/sua-san-pham/{{ $item['id'] }}" style='width:100%;color:black; font-size:13px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;'>
                                                 {{ $item['name'] }}
                                             </a>
                                         </h3>
@@ -88,8 +88,11 @@
                         @endforeach
                     </div>
                 </div>
-            </section>
+            </section>           
         </div>
+        <div style="width:100%; padding:15px;display:flex;justify-content:end">
+            {{ $data->appends(request()->query())->onEachSide(1)->links('pagination::bootstrap-4') }}
+        </div> 
     @else
         <div class='col-lg-12' style="padding:16px; width:100%">
             Không Có Sản Phảm Phù Hợp
