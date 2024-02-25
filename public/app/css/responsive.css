@@ -1,0 +1,149 @@
+/* ====================================================
+    Responsive
+==================================================== */
+/* Desktop 1200 - up */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .header-search-1 {
+        display: none !important;
+    }
+
+    .logo_main {
+        max-width: 85%;
+    }
+}
+/* Desktop 1400 - up */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+    }
+
+    .logo_main {
+        max-width: 85%;
+    }
+    .header-search-1 {
+        display: none !important;
+    }
+}
+
+/* Normal desktop :992px. (Laptop 14") */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Global */
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+    .header-search-1 {
+        display: none !important;
+    }
+}
+
+ 
+/* Tablet device :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Global */
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 15px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .header-search-2 {
+        display: none !important;
+    }
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    /* Global */
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    h4 {
+        font-size: 17px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    
+    .logo_main {
+        max-width: 60%;
+    }
+    .header-search-2 {
+        display: none !important; 
+    }
+    .home {
+        display: none !important;
+    }
+    .header-menu-column {
+        padding: 0;
+    }
+    .ul_menu {
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .site-logo {
+        margin-bottom: 0 !important;
+    }
+    .ltn__header-8 .ltn__main-menu > ul > li {
+        margin-right: 5px !important;
+    }
+    .header-search-1 {
+        display: flex !important;
+        align-items: center !important;
+    }
+}
+.header-search-2 {
+padding: 0 !important;
+}
