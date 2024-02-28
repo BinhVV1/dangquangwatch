@@ -137,11 +137,61 @@
         margin-bottom: 0 !important;
     }
     .ltn__header-8 .ltn__main-menu > ul > li {
-        margin-right: 5px !important;
+        margin-right: 0px !important;
     }
     .header-search-1 {
         display: flex !important;
         align-items: center !important;
+    }
+    .ltn__main-menu > ul > li > a {
+        font-size: 12px;
+    }
+    .mega-menu {
+        display: none;
+    }
+    .ltn__slide-item {
+        padding-top:120px;
+    }
+    .ltn__header-middle-area{
+        min-height: 120px;
+    }
+    .ltn__banner-img{
+        border-radius: 5px !important;
+    }
+    .ltn__banner{
+        padding: 5px !important;    
+    }
+    .feature-info br{
+        display:none;
+    }
+    .chinh-sach {
+        display: block !important;
+    }
+    .chinh-sach-2{
+        border-bottom: 1px solid #c0b1b1;
+        gap: 10px;
+        max-width: 100% !important;
+        display: flex !important;
+    }
+    .chinh-sach-2 > .feature-icon{
+        min-width: 50px !important;
+        max-width: 13% !important;
+        margin: 0 !important;
+    }
+    .chinh-sach-2 > .feature-info{
+        display: flex;
+        align-items: center;
+    }
+    #logo_main {
+        margin-bottom: 0px !important;
+        margin-left: -18px !important;
+    }
+    #footer-title{
+        margin-bottom: 0px !important;
+    }
+    .footer-title{
+        margin-bottom: 10px !important;
+        margin-top: 20px !important;
     }
 }
 .header-search-2 {
