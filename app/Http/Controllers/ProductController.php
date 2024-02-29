@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::limit(4)->get()->toArray();
+        $data = Product::limit(28)->get()->toArray();
+
         return view('index', compact('data'));
     }
 
@@ -35,13 +36,14 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function productDetail($link)
+    public function productDetail($link, Request $request)
     {
-        $product = Product::where('link', $link)->get()->toArray();
+        $id = $request->input('id');
+        $product = Product::where('id', $id)->get()->toArray();
         if (empty($product)) {
             return redirect('/')->with('error','Sản Phẩm Không Tồn Tại'); 
         } else {
-            $data = ['data' => Product::where('link', '!=', $link)->limit(5)->get()->toArray(), 'product' => $product];
+            $data = ['data' => Product::where('id', '!=', $id)->where('sex', '=', $product[0]['sex'])->limit(5)->get()->toArray(), 'product' => $product];
         }
         
         return view('productDetail', $data);

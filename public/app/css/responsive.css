@@ -31,6 +31,9 @@
 
 /* Normal desktop :992px. (Laptop 14") */
 @media (min-width: 992px) and (max-width: 1199px) {
+    .anh-san-pham{
+        max-height: 200px;
+     }
     /* Global */
     h1 {
         font-size: 30px;
@@ -58,6 +61,9 @@
  
 /* Tablet device :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+    .anh-san-pham{
+        max-height: 210px;
+     }
     /* Global */
     body {
         font-size: 14px;
@@ -91,6 +97,18 @@
  
 /* small mobile :320px. */
 @media (max-width: 767px) {
+    .product-price > span{
+        font-size: 15px !important;
+    }
+    .ltn__product-item{
+        margin-bottom: 20px !important;
+    }
+    .product-info{
+        padding-top: 10px !important;
+    }
+    .anh-san-pham{
+        max-height: 150px;
+     }
     /* Global */
     body {
         font-size: 14px;
@@ -151,6 +169,13 @@
     }
     .ltn__slide-item {
         padding-top:120px;
+    }
+    .short-by > .nice-select{
+        width: 100% !important;
+    }
+    .short-by{
+        width: 100% !important;
+        margin: 0 !important;
     }
     .ltn__header-middle-area{
         min-height: 120px;

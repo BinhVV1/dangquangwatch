@@ -17,18 +17,6 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [App\Http\Controllers\ProductController::class, 'index'])->name('index');
 Route::get('/san-pham', [App\Http\Controllers\ProductController::class, 'product'])->name('product');
 Route::get('/san-pham/{link}/', [App\Http\Controllers\ProductController::class, 'productDetail'])->name('productDetail');
-Route::get('/gioi-thieu', function () {
-    return view('about');
-});
-
-Route::get('/nha-may', function () {
-    return view('factory');
-});
-
-Route::get('/chinh-sach', function () {
-    return view('policy');
-});
-
 Route::get('/lien-he', function () {
     return view('contact');
 });

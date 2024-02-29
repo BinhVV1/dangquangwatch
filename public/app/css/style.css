@@ -12422,7 +12422,18 @@ input.cart-plus-minus-box {
 .footer-logo {
   position: relative;
   top: -10px; }
-
+.xem-them:hover{
+  color: #000000;
+}
+.anh-san-pham{
+  max-height: 250px;
+}
+.san-pham:hover > img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.ltn__slide-item {
+ 
+}
 /* ----------------------------------------------------
     Footer About Widget
 ---------------------------------------------------- */
