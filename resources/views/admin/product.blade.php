@@ -95,7 +95,7 @@
         </div> 
     @else
         <div class='col-lg-12' style="padding:16px; width:100%">
-            Không Có Sản Phảm Phù Hợp
+            Không Có Sản Phẩm Phù Hợp
         </div>
     @endif
 </div>

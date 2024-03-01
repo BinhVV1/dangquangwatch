@@ -5727,13 +5727,23 @@ ul > li .menu-expand::after {
 /* ----------------------------------------------------
     Slider Area 1, 2, 3, 4, 5, 6
 ---------------------------------------------------- */
+.price_slider_amount > .nice-select {
+  width: 100% !important;
+}
 .ltn__slide-item {
   padding-top: 85px;
   }
   .ltn__header-middle-area{
     min-height: 85px;
 }
-
+.tel:hover{
+  color: black;
+  font-weight: 600;
+}
+.footer-menu li:hover a {
+  color: black;
+  font-weight: 600;
+}
 .ltn__slide-item-inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9262,7 +9272,8 @@ blockquote {
     margin-right: 10px; }
     .ltn__pagination-2 ul li:last-child {
       margin-right: 0px; }
-    .ltn__pagination-2 ul li a {
+    .ltn__pagination-2 ul li .page-link {
+      color: #DCCCBD;
       height: 45px;
       width: 45px;
       line-height: 45px;
@@ -9273,11 +9284,24 @@ blockquote {
       border-radius: 100%;
       background-color: #F6F6F6;
       font-size: 13px; }
-    .ltn__pagination-2 ul li:hover a, .ltn__pagination-2 ul li.active a {
+    .ltn__pagination-2 ul li:hover .page-link, .ltn__pagination-2 ul li.active .page-link {
       background-color: var(--ltn__secondary-color);
       border-color: var(--ltn__secondary-color);
-      color: var(--white); }
-
+      color: black; }
+      .page-item:first-child .page-link, .page-item:last-child .page-link{
+        border-radius:100% !important;
+        color:#000;
+      }
+      .pagination{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .page-link {
+        padding: 1px 0px 0px 0px !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+      }
 @media (max-width: 767px) {
   .ltn__pagination ul li {
     margin-right: 5px;

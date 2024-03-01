@@ -59,7 +59,7 @@
                 @php
                     $name = preg_replace('/[\/,]+/', '-', $item['name']);
                     $name = str_replace(' ', '-', strtolower($name));
-                    $link = trim($name, '-');
+                    $link = preg_replace('/-+/', '-', trim($name, '-'));
                 @endphp
                 <div class="col-lg-3 col-md-4 col-sm-6 col-6 san-pham">
                     <div class="ltn__product-item text-center">

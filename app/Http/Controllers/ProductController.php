@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\CategoryDetail;
 
 class ProductController extends Controller
 {
@@ -24,10 +26,89 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function product()
+    public function product(Request $request)
     {
-        $data = Product::get()->toArray();
-        return view('product', compact('data'));
+        $category = Category::join('category_detail','category.id', '=', 'category_detail.id_category')
+        ->get()->toArray();
+
+        if ($request->has('timkiem') && $request->input('timkiem') != '') {
+            $searchTerm = $request->input('timkiem');
+        
+            // $categories = CategoryDetail::where('name_category', 'like', '%'.$searchTerm.'%')->pluck('id')->toArray();
+            // $query = Product::where('name', 'like', '%' . $searchTerm . '%')
+            // ->orWhereIn('sex', $categories)
+            // ->orWhereIn('trademark', $categories)
+            // ->orWhereIn('material', $categories);
+
+            $query = Product::where('name', 'like', '%' . $searchTerm . '%')
+                ->orWhereIn('sex', function($query) use ($searchTerm) {
+                    $query->select('id')
+                          ->from('category_detail')
+                          ->where('name_category', 'like', '%' . $searchTerm . '%');
+                })
+                ->orWhereIn('trademark', function($query) use ($searchTerm) {
+                    $query->select('id')
+                          ->from('category_detail')
+                          ->where('name_category', 'like', '%' . $searchTerm . '%');
+                })
+                ->orWhereIn('material', function($query) use ($searchTerm) {
+                    $query->select('id')
+                          ->from('category_detail')
+                          ->where('name_category', 'like', '%' . $searchTerm . '%');
+                });
+        } else {
+            $query = Product::query();
+
+            if ($request->has('gia') && $request->input('gia') != '') {
+                $priceRange = $request->input('gia');
+
+                switch ($priceRange) {
+                    case 'duoi-1tr':
+                        $minPrice = 0;
+                        $maxPrice = 999999;
+                        break;
+                    case '1tr-2tr':
+                        $minPrice = 1000000;
+                        $maxPrice = 2000000;
+                        break;
+                    case '2tr-3tr':
+                        $minPrice = 2000000;
+                        $maxPrice = 3000000;
+                        break;
+                    case 'tren-3tr':
+                        $minPrice = 3000000;
+                        $maxPrice = 9999999999; 
+                        break;
+                    default:
+                        $minPrice = 0;
+                        $maxPrice = 9999999999;
+                        break;
+                }
+                
+                $query->whereRaw("REPLACE(REPLACE(price, ',', ''), '.', '') >= ? AND REPLACE(REPLACE(price, ',', ''), '.', '') <= ?", [$minPrice, $maxPrice]);
+            }
+
+            if ($request->has('timkiem') && $request->input('timkiem') != '') {
+            }
+
+            if ($request->has('day') && $request->input('day') != '') {
+                $material = CategoryDetail::whereIn('name_code', $request->input('day'))->pluck('id')->toArray();
+                $query->whereIn('material',  $material);
+            }
+
+            if ($request->has('thuonghieu') && is_array($request->input('thuonghieu')) && count($request->input('thuonghieu')) > 0) {
+                $trademarks = CategoryDetail::whereIn('name_code', $request->input('thuonghieu'))->pluck('id')->toArray();
+
+                $query->whereIn('trademark', $trademarks);
+            }
+        }
+
+        $perPage = 18;
+        $count = $query->count();
+        $data = $query->paginate($perPage);
+        $search =$request->input('timkiem') ?? '';
+
+        return view('product', compact('count', 'data', 'category', 'search'));
     }
 
     /**

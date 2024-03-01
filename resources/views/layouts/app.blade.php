@@ -44,114 +44,114 @@
                                 <div class="ltn__main-menu" style="display: flex;justify-content: center;">
                                     <ul class='ul_menu' style="justify-content:space-between; width:100%">
                                         <li class="menu-icon home"><a href="/">TRANG CHỦ</a></li>
-                                        <li class="menu-icon"><a href="/san-pham?loai=nam">NAM</a>
+                                        <li class="menu-icon"><a href="/san-pham?loai%5B%5D=nam">NAM</a>
                                             <ul class="mega-menu" style="overflow: auto;max-height: 500px;border-top: 2px solid black">
                                                 <li><a>KHOẢNG GIÁ</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=nam&gia=duoi-1tr">Dưới 1tr</a></li>
-                                                        <li><a href="/san-pham?loai=nam&gia=1tr-2tr">1tr - 2tr</a></li>
-                                                        <li><a href="/san-pham?loai=nam&gia=2tr-3tr">2tr - 3tr</a></li>
-                                                        <li><a href="/san-pham?loai=nam&gia=tren-3tr">Trên 3tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&gia=duoi-1tr">Dưới 1tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&gia=1tr-2tr">1tr - 2tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&gia=2tr-3tr">2tr - 3tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&gia=tren-3tr">Trên 3tr</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>CHẤT LIỆU DÂY</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=nam&day=day-kim-loai">Dây Kim Loại</a></li>
-                                                        <li><a href="/san-pham?loai=nam&day=day-da">Dây Da</a></li>
-                                                        <li><a href="/san-pham?loai=nam&day=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
-                                                        <li><a href="/san-pham?loai=nam&day=day-titanium">Dây Titanium</a></li>
-                                                        <li><a href="/san-pham?loai=nam&day=day-vai">Dây vải</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=day-kim-loai">Dây Kim Loại</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=day-da">Dây Da</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=day-titanium">Dây Titanium</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=day-vai">Dây vải</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>THƯƠNG HIỆU</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=nam&thuonghieu=hublot">Hublot</a></li>
-                                                        <li><a href="/san-pham?loai=nam&thuonghieu=rolex">Rolex</a></li>
-                                                        <li><a href="/san-pham?loai=nam&thuonghieu=hanboro">Hanboro</a></li>
-                                                        <li><a href="/san-pham?loai=nam&thuonghieu=ferragamo">Ferragamo</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai=nam&thuonghieu=carnival">Carnival</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai=nam&thuonghieu=dw">DW</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai=nam&thuonghieu=patek-philip">Patek Philip</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai=nam&thuonghieu=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=hublot">Hublot</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=rolex">Rolex</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=hanboro">Hanboro</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=ferragamo">Ferragamo</a></li>
+                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=carnival">Carnival</a></li>
+                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=dw">DW</a></li>
+                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=patek-philip">Patek Philip</a></li>
+                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class='header-search-2' style="padding: 5px !important"><a>THƯƠNG HIỆU</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=nam&thuonghieu=carnival">Carnival</a></li>
-                                                        <li><a href="/san-pham?loai=nam&thuonghieu=dw">DW</a></li>
-                                                        <li><a href="/san-pham?loai=nam&thuonghieu=patek-philip">Patek Philip</a></li>
-                                                        <li><a href="/san-pham?loai=nam&thuonghieu=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=carnival">Carnival</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=dw">DW</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=patek-philip">Patek Philip</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-icon"><a href="/san-pham?loai=nu">NỮ</a>
+                                        <li class="menu-icon"><a href="/san-pham?loai%5B%5D=nu">NỮ</a>
                                             <ul class="mega-menu" style="overflow: auto;max-height: 500px;border-top: 2px solid black">
                                                 <li><a>KHOẢNG GIÁ</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=nu&gia=duoi-1tr">Dưới 1tr</a></li>
-                                                        <li><a href="/san-pham?loai=nu&gia=1tr-2tr">1tr - 2tr</a></li>
-                                                        <li><a href="/san-pham?loai=nu&gia=2tr-3tr">2tr - 3tr</a></li>
-                                                        <li><a href="/san-pham?loai=nu&gia=tren-3tr">Trên 3tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&gia=duoi-1tr">Dưới 1tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&gia=1tr-2tr">1tr - 2tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&gia=2tr-3tr">2tr - 3tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&gia=tren-3tr">Trên 3tr</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>CHẤT LIỆU DÂY</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=nu&day=day-kim-loai">Dây Kim Loại</a></li>
-                                                        <li><a href="/san-pham?loai=nu&day=day-da">Dây Da</a></li>
-                                                        <li><a href="/san-pham?loai=nu&day=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
-                                                        <li><a href="/san-pham?loai=nu&day=day-titanium">Dây Titanium</a></li>
-                                                        <li><a href="/san-pham?loai=nu&day=day-vai">Dây vải</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=day-kim-loai">Dây Kim Loại</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=day-da">Dây Da</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=day-titanium">Dây Titanium</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=day-vai">Dây vải</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>THƯƠNG HIỆU</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=hublot">Hublot</a></li>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=rolex">Rolex</a></li>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=patek-philip">Patek Philip</a></li>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=chopard">Chopard</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai=nu&thuonghieu=franck-muller">Franck Muller</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai=nu&thuonghieu=anne-klein">Anne Klein</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai=nu&thuonghieu=dw">DW</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai=nu&thuonghieu=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=hublot">Hublot</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=rolex">Rolex</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=patek-philip">Patek Philip</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=chopard">Chopard</a></li>
+                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=franck-muller">Franck Muller</a></li>
+                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=anne-klein">Anne Klein</a></li>
+                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=dw">DW</a></li>
+                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class='header-search-2' style="padding: 5px !important"><a>THƯƠNG HIỆU</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=franck-muller">Franck Muller</a></li>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=anne-klein">Anne Klein</a></li>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=dw">DW</a></li>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=franck-muller">Franck Muller</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=anne-klein">Anne Klein</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=dw">DW</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-icon"><a href="/san-pham?loai=cap-doi">CẶP ĐÔI</a>
+                                        <li class="menu-icon"><a href="/san-pham?loai%5B%5D=cap-doi">CẶP ĐÔI</a>
                                             <ul class="mega-menu" style="overflow: auto;max-height: 500px;border-top: 2px solid black">
                                                 <li><a>KHOẢNG GIÁ</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=cap-doi&gia=duoi-1tr">Dưới 1tr</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&gia=1tr-2tr">1tr - 2tr</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&gia=2tr-3tr">2tr - 3tr</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&gia=tren-3tr">Trên 3tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&gia=duoi-1tr">Dưới 1tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&gia=1tr-2tr">1tr - 2tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&gia=2tr-3tr">2tr - 3tr</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&gia=tren-3tr">Trên 3tr</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>CHẤT LIỆU DÂY</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=cap-doi&day=day-kim-loai">Dây Kim Loại</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&day=day-da">Dây Da</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&day=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&day=day-titanium">Dây Titanium</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&day=day-vai">Dây vải</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=day-kim-loai">Dây Kim Loại</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=day-da">Dây Da</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=day-titanium">Dây Titanium</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=day-vai">Dây vải</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>THƯƠNG HIỆU</a>
                                                     <ul>
-                                                        <li><a href="/san-pham?loai=cap-doi&thuonghieu=hublot">Hublot</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&thuonghieu=rolex">Rolex</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&thuonghieu=patek-philip">Patek Philip</a></li>
-                                                        <li><a href="/san-pham?loai=nu&thuonghieu=franck-muller">Franck Muller</a></li>
-                                                        <li><a href="/san-pham?loai=cap-doi&thuonghieu=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&thuonghieu%5B%5D=hublot">Hublot</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&thuonghieu%5B%5D=rolex">Rolex</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&thuonghieu%5B%5D=patek-philip">Patek Philip</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&thuonghieu%5B%5D=franck-muller">Franck Muller</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&thuonghieu%5B%5D=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -169,7 +169,7 @@
                                                 </div>
                                                 <div class="header-search-1-form">
                                                     <form id="#234" method="get"  action="/san-pham">
-                                                        <input type="text" name="timkiem" value="" placeholder="Search here..."/>
+                                                        <input type="text" name="timkiem" value="{{ $search ?? '' }}" placeholder="Search here..."/>
                                                         <button type="submit">
                                                             <span><i class="icon-magnifier"></i></span>
                                                         </button>
@@ -189,7 +189,7 @@
                                     <!-- header-search-2 -->
                                     <div class="header-search-2">
                                         <form id="#234" method="get"  action="/san-pham">
-                                            <input type="text" name="timkiem" value="" placeholder="Search here..."/>
+                                            <input type="text" name="timkiem" value="{{ $search ?? '' }}" placeholder="Search here..."/>
                                             <button type="submit">
                                                 <span><i class="icon-magnifier"></i></span>
                                             </button>
@@ -388,7 +388,7 @@
                                             <i class="icon-phone"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="tel:+0333345444">+033 334 5444</a></p>
+                                            <p><a class='tel' href="tel:+0333345444">+033 334 5444</a></p>
                                         </div>
                                     </li>
                                 </ul>
