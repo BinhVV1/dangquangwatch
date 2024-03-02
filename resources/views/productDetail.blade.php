@@ -1,152 +1,204 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- title page -->
-    <section class="flat-title-page inner"><div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-title-heading center">
-                        <h2 class="heading">{{ $product[0]['name'] }}</h2>
-                        <div class="title-inner link-style-3">
-                            <h5 class=""><a class="home fw-4" href="/">Trang Chủ</a><a class="home fw-4" href="/san-pham/">Sản Phẩm</a><span>{{ $product[0]['name'] }}</span></h5>
-                        </div>
-                    </div>                        
-                </div>
-            </div>
-        </div>                    
-    </section>
+    
+<div class="ltn__utilize-overlay"></div>
 
-    <section class="tf-section flat-shop-details" id='flat-shop-details'>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-12 col-sm-12">
-                    <div class="image-cart">
-                        <div class="flat-tabs card-media media" style="display: flex; flex-direction: column; align-items:center;">                                 
-                            <div class="content-tab content-img">
-                                <div class="content-inner tab-content" style="width: 100%; height: 100%; display: flex; padding:15px 0; align-items: center; justify-content: center;">
-                                    <img src="{{ asset('storage/app/public/images-product/' . basename($product[0]['images_main'])) }}" alt="">
-                                </div>
-                                @if ($product[0]['images'])
-                                    @foreach(explode(',', $product[0]['images']) as $value)
-                                        <div class="content-inner tab-content" style="width: 100%; height: 100%; display: flex; padding:15px 0; align-items: center; justify-content: center;">
-                                            <img src="{{ asset('storage/app/public/images-product/' . basename($value)) }}" alt="">
-                                        </div>
-                                    @endforeach   
-                                @endif                         
-                            </div>
-                            <ul id='slide_product' class="menu-tab menu-img" style="width:100%; overflow: auto;">
-                                <li class="item-title">
-                                    <img src="{{ asset('storage/app/public/images-product/' . basename($product[0]['images_main'])) }}" alt="">
-                                </li>
-                                @if ($product[0]['images'])
-                                    @foreach(explode(',', $product[0]['images']) as $value)
-                                        
-                                        <li class="item-title">
-                                            <img src="{{ asset('storage/app/public/images-product/' . basename($value)) }}" alt="">
-                                        </li>
-                                    @endforeach
-                                @endif 
-                            </ul>
-                        </div>   
+<!-- BREADCRUMB AREA START -->
+<div class="ltn__slide-item ltn__breadcrumb-area ltn__breadcrumb-area-4 ltn__breadcrumb-color-white---">
+    <div class="container" style="padding-top:50px">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn__breadcrumb-inner text-center">
+                    <h2 class="ltn__page-title">CHI TIẾT SẢN PHẨM</h2>
+                    <div class="ltn__breadcrumb-list">
+                        <ul>
+                            <li><a href="/">Trang Chủ</a></li>
+                            <li><a href="/san-pham">Sản Phẩm</a></li>
+                            <li>{{ $product[0]['name'] }}</li>
+                        </ul>
                     </div>
-                                        
-                </div>
-                            
-                <div class="col-lg-5 col-md-12 col-sm-12">
-                    <div class="wrap-cart">
-                        <div class="titles title-36 fw-6" style="color:#c80000;">{{ $product[0]['name'] }}</div>
-                        <div class="box-star flex">
-                            <div class="star">
-                                <span class="fa fa-star checked" style="font-size:15px;color:#ff9c00"></span>
-                                <span class="fa fa-star checked" style="font-size:15px;color:#ff9c00"></span>
-                                <span class="fa fa-star checked" style="font-size:15px;color:#ff9c00"></span>
-                                <span class="fa fa-star checked" style="font-size:15px;color:#ff9c00"></span>
-                                <i class="fa fa-star-half-o" style="font-size:15px;color:#ff9c00"></i>
-                            </div>
-                            <h6 class="text-color-4">( {{ rand(8, 39) }} Đánh Giá )</h6>
-                        </div>
-                        <p class="text-1">{{ $product[0]['subtitle'] }} </p>
-                        
-                        <div class="icon-box flex">
-                            <div class="icon icon-1 link-style-1" onclick="toggleHeartColor()"><i id="heart-icon" class="far fa-heart"></i>Thêm vào danh sách yêu thích</div>
-                        </div>
-                        <div class="title-box flex-three"><h5 class="fw-6">Phân Loại :</h5><h6 class="fw-4 text-color-4" style="color:#c80000 !important;">{{ $product[0]['category'] }}</h6></div>
-                        <div class="title-box style flex-three"><h5 class="fw-6">Thẻ :</h5><h6 class="fw-4 text-color-4" style="color:#c80000 !important;">{{ $product[0]['tags'] }}</h6></div>
-                        <div class="icon-social text-color-1 flex">
-                            <a target="_blank" href="https://www.facebook.com/profile.php?id=61555131531304" class="style-1"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="style-2"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="style-3"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#" class="style-4"><i class="fab fa-linkedin-in"></i></a>                            
-                            
-                        </div>
-                    </div>               
-                </div>
-
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="post"  id='title_sub'>
-                        <div class="title-one title-36 fw-6">Mô tả sản phẩm</div>
-                        <hr>
-                        <p class="text-2">
-                            <p style="margin-bottom:20px;">{!! $product[0]['description'] !!}</p>
-                        </p>
-                    </div>                        
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="flat-vegetables shop">
-        <div class="container">
-            <div class="row">                  
-                <div class="col-lg-12 col-md-12">
-                    <div class="title-two title-36 fw-6">Sản Phẩm Khác</div>
-                    <div class="wrap-vegetables">
-                        <div class="swiper-container carousel-shop">
-                            <div class="swiper-wrapper">  
-                                @foreach($data as $value)
-                                    <div class="swiper-slide">
-                                        <div class="box box-hv">
-                                            <a href="/san-pham/{{ $value['link'] }}" >
-                                                <div class="images hover-style">
-                                                    <div style="width: 100%; height: 100%; display: flex;  align-items: center; justify-content: center;">
-                                                        <img style="max-width: 100%; max-height: 100%;" src="{{ asset('storage/app/public/images-product/' . basename($value['images_main'])) }}" alt="images">
-                                                    </div>                                               
-                                                    <div class="tag-text"> NEW </div>                                             
-                                                </div>
-                                                <div class="content">
-                                                    <div class="star">
-                                                        <span class="fa fa-star checked" style="font-size:15px;color:#ff9c00"></span>
-                                                        <span class="fa fa-star checked" style="font-size:15px;color:#ff9c00"></span>
-                                                        <span class="fa fa-star checked" style="font-size:15px;color:#ff9c00"></span>
-                                                        <span class="fa fa-star checked" style="font-size:15px;color:#ff9c00"></span>
-                                                        <i class="fa fa-star-half-o" style="font-size:15px;color:#ff9c00"></i>      
-                                                    </div>
-                                                    <h3 class="link-style-6">
-                                                        <a style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;" href="/san-pham/{{ $value['link'] }}">{{ $value['name'] }}</a>
-                                                    </h3>
-                                                </div>
+    </div>
+</div>
+<!-- BREADCRUMB AREA END -->
+ <!-- SHOP DETAILS AREA START -->
+ <div class="ltn__shop-details-area pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="ltn__shop-details-inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="ltn__shop-details-img-gallery ltn__shop-details-img-gallery-2">
+                                <div class="ltn__shop-details-large-img">
+                                    <div class="single-large-img">
+                                        <a href="{{ asset('storage/images-product/' . basename($product[0]['images_main'])) }}" data-rel="lightcase:myCollection">
+                                            <img src="{{ asset('storage/images-product/' . basename($product[0]['images_main'])) }}">
+                                        </a>
+                                    </div>
+                                    @if ($product[0]['images'])
+                                        @foreach(explode(',', $product[0]['images']) as $value)
+                                            <a href="{{ asset('storage/images-product/' . basename($value)) }}" data-rel="lightcase:myCollection">
+                                                <img src="{{ asset('storage/images-product/' . basename($value)) }}">
+                                            </a>
+                                        @endforeach
+                                    @endif 
+                                </div>
+                                <div class="ltn__shop-details-small-img ltn__shop-details-small-img3 slick-arrow-2" style="width:75%; margin:10px 0px">
+                                    <div class="single-small-img">
+                                        <img src="{{ asset('storage/images-product/' . basename($product[0]['images_main'])) }}">
+                                    </div>
+                                    @if ($product[0]['images'])
+                                        @foreach(explode(',', $product[0]['images']) as $value)
+                                            <div class="single-small-img">
+                                                <img src="{{ asset('storage/images-product/' . basename($value)) }}">
+                                            </div>
+                                        @endforeach
+                                    @endif 
+                                </div>
+                                <div class="ltn__shop-details-small-img ltn__shop-details-small-img2 slick-arrow-2" style="width:20%; margin:15px 2.2%">
+                                    @if ($product[0]['link'] != '')
+                                        <div class="single-large-img" style="position: relative;">
+                                            <a href="https://www.youtube.com/embed/{{ $product[0]['link'] }}" data-rel="lightcase:myCollection">
+                                                <img src="https://img.youtube.com/vi/{{ $product[0]['link'] }}/0.jpg" style="width:100%;">
+                                                <img src="{{ asset('app/img/icon/youtube-player-multimedia-video-communication-interaction-com.svg') }}" class="youtube-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30px; height: 30px;background:none !important">
                                             </a>
                                         </div>
-                                    </div>
-                                @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="modal-product-info shop-details-info pl-0">
+                                <h3>{{ $product[0]['name'] }}</h3>
+                                <div class="product-price-ratting mb-20">
+                                    <ul>
+                                        <li>
+                                            <div class="product-price">
+                                                <h1><span style="font-size: 18px; font-weight:200">Giá: </span>{{ $product[0]['price'] }} đ</h1>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="modal-product-brief">
+                                    <p>{{ $product[0]['subtitle'] }}</p>
+                                </div>
+                                <div class="modal-product-meta ltn__product-details-menu-1 mb-30">
+                                    <ul>
+                                        <li><strong>Mã sản phẩm:</strong> <span><b>{{ $product[0]['code'] }}</b></span></li>
+                                        <li>
+                                            <strong>Tags:</strong>
+                                            <span>
+                                                @foreach ($category as $value)
+                                                    <a href="/san-pham?{{ $value['id_category'] == 1 ? 'loai%5B%5D' : ( $value['id_category'] == 2 ? 'thuonghieu%5B%5D' : 'day%5B%5D') }}={{ $value['name_code'] }}"><b>#{{ $value['name_category'] }}</b></a>
+                                                @endforeach
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ltn__social-media mb-30">
+                                    <ul>
+                                        <li class="d-meta-title">Share:</li>
+                                        <li><a href="#" title="Facebook"><i class="icon-social-facebook"></i></a></li>
+                                        <li><a href="#" title="Twitter"><i class="icon-social-twitter"></i></a></li>
+                                        <li><a href="#" title="Pinterest"><i class="icon-social-pinterest"></i></a></li>
+                                        <li><a href="#" title="Instagram"><i class="icon-social-instagram"></i></a></li>
+                                        
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+<!-- SHOP DETAILS AREA END -->
 
-    <script>
-        function toggleHeartColor() {
-            var heartIcon = document.getElementById('heart-icon');
-            
-            if (heartIcon.classList.contains('heart-filled')) {
-                heartIcon.classList.remove('heart-filled');
-            } else {
-                heartIcon.classList.add('heart-filled');
-            }
-        }
-    </script>
+<!-- SHOP DETAILS TAB AREA START -->
+<div class="ltn__shop-details-tab-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn__shop-details-tab-inner">
+                    <div class="ltn__shop-details-tab-menu">
+                        <div class="nav" style="gap:10px;">
+                            <a class="active show" data-bs-toggle="tab" href="#liton_tab_details_1_1">Thông Tin</a>
+                            <a data-bs-toggle="tab" href="#liton_tab_details_1_2" class="">Giới Thiệu</a>
+                            <!-- <a data-bs-toggle="tab" href="#liton_tab_details_1_3" class="">Comments</a> -->
+                            <a data-bs-toggle="tab" href="#liton_tab_details_1_4" class="">Chính Sách</a>
+                            <!-- <a data-bs-toggle="tab" href="#liton_tab_details_1_5" class="">Size Chart</a> -->
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="liton_tab_details_1_1">
+                            <div class="ltn__shop-details-tab-content-inner text-left">
+                                <p>{!! $product[0]['information'] !!}</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="liton_tab_details_1_2">
+                            <div class="ltn__shop-details-tab-content-inner text-left">
+                                <p>{!! $product[0]['description'] !!}</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="liton_tab_details_1_4">
+                            <div class="ltn__shop-details-tab-content-inner">
+                                <h4 class="title-2">Chính Sách Khi Mua Hàng Tại 1993Watch</h4>
+                                <ul>
+                                    <li>Đổi trả trong vòng 30 ngày</li>
+                                    <li>Bảo Hành lên đến 2 năm</li>
+                                    <li>Được kiểm tra hàng trước khi nhận</li>
+                                    <li>Hỗ trợ miễn phí giao hàng toàn quốc</li>
+                                    <li>Hỗ trợ, tư vấn, giải đáp thắc mắc 24/7</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SHOP DETAILS TAB AREA END -->
+
+<!-- PRODUCT SLIDER AREA START -->
+<div class="ltn__product-slider-area pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title-area text-center">
+                    <h3 class="section-title section-title-border" style="font-size: 25px">SẢN PHẨM TƯƠNG TỰ</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row ltn__related-product-slider-one-active slick-arrow-1">
+            @foreach($data as $value)
+                @php
+                    $name = preg_replace('/[\/,]+/', '-', $value['name']);
+                    $name = str_replace(' ', '-', strtolower($name));
+                    $link = preg_replace('/-+/', '-', trim($name, '-'));
+                @endphp
+                <div class="col-12">
+                    <div class="ltn__product-item ltn__product-item-4">
+                        <div class="product-img">
+                            <a href="/san-pham/{{ $link }}?id={{ $value['id'] }}"><img src="{{ asset('storage/images-product/' . basename($value['images_main'])) }}" alt="#"></a>
+                        </div>
+                        <div class="product-info">
+                            <h2 class="product-title"><a href="/san-pham/{{ $link }}?id={{ $value['id'] }}" style="overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;">{{ $value['name'] }}</a></h2>
+                            <div class="product-price">
+                                <span>{{ $value['price'] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+<!-- PRODUCT SLIDER AREA END -->
+
 @endsection

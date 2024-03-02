@@ -69,13 +69,9 @@
                                                         <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=rolex">Rolex</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=hanboro">Hanboro</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=ferragamo">Ferragamo</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=carnival">Carnival</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=dw">DW</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=patek-philip">Patek Philip</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class='header-search-2' style="padding: 5px !important"><a>THƯƠNG HIỆU</a>
+                                                <li class='header-search-4' style="padding: 5px !important"><a>THƯƠNG HIỆU</a>
                                                     <ul>
                                                         <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=carnival">Carnival</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nam&thuonghieu%5B%5D=dw">DW</a></li>
@@ -110,13 +106,9 @@
                                                         <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=rolex">Rolex</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=patek-philip">Patek Philip</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=chopard">Chopard</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=franck-muller">Franck Muller</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=anne-klein">Anne Klein</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=dw">DW</a></li>
-                                                        <li class='header-search-1'><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=cac-thuong-hieu-khac">Các thương hiệu khác</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class='header-search-2' style="padding: 5px !important"><a>THƯƠNG HIỆU</a>
+                                                <li class='header-search-4' style="padding: 5px !important"><a>THƯƠNG HIỆU</a>
                                                     <ul>
                                                         <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=franck-muller">Franck Muller</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nu&thuonghieu%5B%5D=anne-klein">Anne Klein</a></li>
@@ -158,7 +150,7 @@
                                         </li>
                                         <li class="menu-icon"><a href="/tin-tuc">TIN TỨC</a></li>
                                         <li><a href="/lien-he">LIÊN HỆ</a></li>
-                                        <li class='header-search-1' style="display: flex;align-items: center;">
+                                        <li class='header-search-3' style="display: flex !important;align-items: center !important;">
                                             <!-- header-search-1 -->
                                             <div class="header-search-wrap">
                                                 <div class="header-search-1">
@@ -167,7 +159,7 @@
                                                         <i class="icon-magnifier-remove  for-search-close"></i>
                                                     </div>
                                                 </div>
-                                                <div class="header-search-1-form">
+                                                <div class="header-search-1-form" style="right: 135px;">
                                                     <form id="#234" method="get"  action="/san-pham">
                                                         <input type="text" name="timkiem" value="{{ $search ?? '' }}" placeholder="Search here..."/>
                                                         <button type="submit">
@@ -185,7 +177,7 @@
                     <div class="col">
                         <div class="ltn__header-options">
                             <ul>
-                                <li class='header-search-2'>
+                                <li class='header-search-4'>
                                     <!-- header-search-2 -->
                                     <div class="header-search-2">
                                         <form id="#234" method="get"  action="/san-pham">
@@ -215,8 +207,8 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="ltn__newsletter-inner ltn__newsletter-inner-4 text-color-white text-center">
                         <h2>SẢN PHẨM CHO RIÊNG BẠN</h2>
-                        <form action="#" class="ltn__form-box">
-                            <input type="text" name="timkiem" value="" placeholder="Search here..."/>
+                        <form action="/san-pham" class="ltn__form-box">
+                            <input type="text" name="timkiem" value="{{ $search ?? '' }}" placeholder="Search here..."/>
                             <div class="btn-wrapper">
                                 <button class="theme-btn-1 btn text-uppercase" type="submit">Tìm Kiếm</button>
                             </div>
@@ -331,11 +323,11 @@
                             <h4 class="footer-title">CHẤT LIỆU DÂY</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="/san-pham?day=day-kim-loai">Dây Kim Loại</a></li>
-                                    <li><a href="/san-pham?day=day-da">Dây Da</a></li>
-                                    <li><a href="/san-pham?day=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
-                                    <li><a href="/san-pham?day=day-titanium">Dây Titanium</a></li>
-                                    <li><a href="/san-pham?day=day-vai">Dây vải</a></li>
+                                    <li><a href="/san-pham?day%5B%5D=day-kim-loai">Dây Kim Loại</a></li>
+                                    <li><a href="/san-pham?day%5B%5D=day-da">Dây Da</a></li>
+                                    <li><a href="/san-pham?day%5B%5D=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
+                                    <li><a href="/san-pham?day%5B%5D=day-titanium">Dây Titanium</a></li>
+                                    <li><a href="/san-pham?day%5B%5D=day-vai">Dây vải</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -345,10 +337,10 @@
                             <h4 class="footer-title">THƯƠNG HIỆU</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="/san-pham?thuonghieu=hublot">Hublot</a></li>
-                                    <li><a href="/san-pham?thuonghieu=rolex">Rolex</a></li>
-                                    <li><a href="/san-pham?thuonghieu=hanboro">Hanboro</a></li>
-                                    <li><a href="/san-pham?thuonghieu=ferragamo">Ferragamo</a></li>
+                                    <li><a href="/san-pham?thuonghieu%5B%5D=hublot">Hublot</a></li>
+                                    <li><a href="/san-pham?thuonghieu%5B%5D=rolex">Rolex</a></li>
+                                    <li><a href="/san-pham?thuonghieu%5B%5D=hanboro">Hanboro</a></li>
+                                    <li><a href="/san-pham?thuonghieu%5B%5D=ferragamo">Ferragamo</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -358,10 +350,10 @@
                             <h4 class="footer-title">THƯƠNG HIỆU</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="/san-pham?thuonghieu=carnival">Carnival</a></li>
-                                    <li><a href="/san-pham?thuonghieu=dw">DW</a></li>
-                                    <li><a href="/san-pham?thuonghieu=patek-philip">Patek Philip</a></li>
-                                    <li><a href="/san-pham?thuonghieu=franck-muller">Franck Muller</a></li>
+                                    <li><a href="/san-pham?thuonghieu%5B%5D=carnival">Carnival</a></li>
+                                    <li><a href="/san-pham?thuonghieu%5B%5D=dw">DW</a></li>
+                                    <li><a href="/san-pham?thuonghieu%5B%5D=patek-philip">Patek Philip</a></li>
+                                    <li><a href="/san-pham?thuonghieu%5B%5D=franck-muller">Franck Muller</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -228,6 +228,12 @@
     .form .widget {
         padding: 0px 20px;
     }
+    .modal-product-meta li strong {
+        min-width: 0px;
+    }
+    .ltn__shop-details-area {
+        padding-bottom: 20px !important;
+    }
 }
 .header-search-2,.header-search-4 {
 padding: 0 !important;

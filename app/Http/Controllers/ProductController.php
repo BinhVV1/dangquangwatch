@@ -88,7 +88,9 @@ class ProductController extends Controller
                 $query->whereRaw("REPLACE(REPLACE(price, ',', ''), '.', '') >= ? AND REPLACE(REPLACE(price, ',', ''), '.', '') <= ?", [$minPrice, $maxPrice]);
             }
 
-            if ($request->has('timkiem') && $request->input('timkiem') != '') {
+            if ($request->has('loai') && $request->input('loai') != '') {
+                $sex = CategoryDetail::whereIn('name_code', $request->input('loai'))->pluck('id')->toArray();
+                $query->whereIn('sex', $sex);
             }
 
             if ($request->has('day') && $request->input('day') != '') {
@@ -121,12 +123,27 @@ class ProductController extends Controller
     {
         $id = $request->input('id');
         $product = Product::where('id', $id)->get()->toArray();
+        $array = [$product[0]['sex'], $product[0]['trademark'], $product[0]['material']];
+        $category = CategoryDetail::WhereIn('id', $array)->get()->toArray();
+
         if (empty($product)) {
             return redirect('/')->with('error','Sản Phẩm Không Tồn Tại'); 
         } else {
-            $data = ['data' => Product::where('id', '!=', $id)->where('sex', '=', $product[0]['sex'])->limit(5)->get()->toArray(), 'product' => $product];
+            $data = [
+                'data' => Product::where('id', '!=', $id)
+                    ->where(function ($query) use ($product) {
+                        $query->where('sex', '=', $product[0]['sex'])
+                            ->orWhere('trademark', '=', $product[0]['trademark'])
+                            ->orWhere('material', '=', $product[0]['material']);
+                    })
+                    ->limit(5)
+                    ->get()
+                    ->toArray(), 
+                'product' => $product,
+                'category' => $category
+            ];
         }
-        
+
         return view('productDetail', $data);
     }
 

@@ -95,21 +95,21 @@
             <div class="ltn__banner" style="max-width:33.33%">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img" style="border-radius: 10px">
-                        <a href="shop.html"><img src="{{ asset('app/img/banner/banner-danh-muc-dong-ho-nam.jpg') }}" alt="Banner Image"></a>
+                        <a href="/san-pham?loai%5B%5D=nam"><img src="{{ asset('app/img/banner/banner-danh-muc-dong-ho-nam.jpg') }}" alt="Banner Image"></a>
                     </div>
                 </div>
             </div>
             <div class="ltn__banner" style="max-width:33.33%">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img" style="border-radius: 10px">
-                        <a href="shop.html"><img src="{{ asset('app/img/banner/banner-danh-muc-dong-ho-nu.jpg') }}" alt="Banner Image"></a>
+                        <a href="/san-pham?loai%5B%5D=nu"><img src="{{ asset('app/img/banner/banner-danh-muc-dong-ho-nu.jpg') }}" alt="Banner Image"></a>
                     </div>
                 </div>
             </div>
             <div class="ltn__banner" style="max-width:33.33%">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img" style="border-radius: 10px">
-                        <a href="shop.html"><img src="{{ asset('app/img/banner/banner-danh-muc-dong-ho-doi.jpg') }}" alt="Banner Image"></a>
+                        <a href="/san-pham?loai%5B%5D=cap-doi"><img src="{{ asset('app/img/banner/banner-danh-muc-dong-ho-doi.jpg') }}" alt="Banner Image"></a>
                     </div>
                 </div>
             </div>
