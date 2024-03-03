@@ -178,7 +178,7 @@
         <div class="row ltn__related-product-slider-one-active slick-arrow-1">
             @foreach($data as $value)
                 @php
-                    $name = preg_replace('/[\/,]+/', '-', $value['name']);
+                    $name = preg_replace('/[\/,?!@%#*&()^]+/', '-', $value['name']);
                     $name = str_replace(' ', '-', strtolower($name));
                     $link = preg_replace('/-+/', '-', trim($name, '-'));
                 @endphp

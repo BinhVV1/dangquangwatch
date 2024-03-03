@@ -57,7 +57,7 @@
             <!-- ltn__product-item -->
             @foreach($data as $item)
                 @php
-                    $name = preg_replace('/[\/,]+/', '-', $item['name']);
+                    $name = preg_replace('/[\/,?!@%#*&()^]+/', '-', $item['name']);
                     $name = str_replace(' ', '-', strtolower($name));
                     $link = preg_replace('/-+/', '-', trim($name, '-'));
                 @endphp
@@ -67,11 +67,13 @@
                             <a href="/san-pham/{{ $link }}?id={{ $item['id'] }}" class='anh-san-pham' style="overflow: hidden; display:flex">
                                 <img class="img" style="width: 100%; height: auto; object-fit: cover;" src="{{ asset('storage/images-product/' . basename($item['images_main'])) }}" alt="">
                             </a>
-                            <div class="product-badge">
-                                <ul>
-                                    <li class="badge-1" style="color:black">HOT</li>
-                                </ul>
-                            </div>
+                            @if ($item['noibat'] == 2)
+                                <div class="product-badge">
+                                    <ul>
+                                        <li class="badge-1" style="color:black">HOT</li>
+                                    </ul>
+                                </div>
+                            @endif
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="san-pham/{{ $link }}?id={{ $item['id'] }}" style="overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;">{{ $item['name'] }}</a></h2>

@@ -52,7 +52,7 @@
                                     </div>
                                     @foreach ($data as $item)
                                     @php
-                                        $name = preg_replace('/[\/,]+/', '-', $item['name']);
+                                        $name = preg_replace('/[\/,?!@%#*&()^]+/', '-', $item['name']);
                                         $name = str_replace(' ', '-', strtolower($name));
                                         $link = preg_replace('/-+/', '-', trim($name, '-'));
                                     @endphp

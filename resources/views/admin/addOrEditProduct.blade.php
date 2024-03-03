@@ -143,7 +143,13 @@
                     <textarea id="editor" name="description" style="height:500px">{{ $data ? $data[0]['description'] : old('description') }}</textarea>
                 </div>
             </div>
-
+            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'></div>
+                <div class="col-sm-6" style='display:flex; gap:4px'>
+                    <input style='margin:0;' type="checkbox" name="noibat" value="2" {{ ($data && $data[0]['noibat'] == 2) || old('noibat') == 2  ? 'checked' : '' }}><span style='margin-right:10px;'>Sản Phẩm Nổi Bật </span>
+                </div>
+                <div class="col-sm-3" style='color:gray'> Sẽ hiển thị lên đầu trang</div>
+            </div>
             <div class="col-sm-12" style="padding:15px; gap:10px; display:flex; justify-content:center;">
                 <button type="submit" class="btn btn-success">Đồng ý</button>
             </div>

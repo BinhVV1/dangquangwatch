@@ -21,9 +21,8 @@ Route::get('/lien-he', function () {
     return view('contact');
 });
 
-Route::get('/tin-tuc', function () {
-    return view('blog');
-});
+Route::get('/tin-tuc', [App\Http\Controllers\ProductController::class, 'news'])->name('news');
+Route::get('/tin-tuc/{link}', [App\Http\Controllers\ProductController::class, 'newsDetail'])->name('newsDetail');
 
 Auth::routes();
 
@@ -34,3 +33,8 @@ Route::post('/admin/postAddOrEditProduct/', [App\Http\Controllers\HomeController
 Route::get('/admin/delete/{id}', [App\Http\Controllers\HomeController::class, 'deleteProduct'])->name('deleteProduct');
 Route::get('/admin/delete-images/{id}/{value}', [App\Http\Controllers\HomeController::class, 'deleteImage'])->name('deleteImage');
 
+Route::get('/admin/news', [App\Http\Controllers\HomeController::class, 'news']);
+Route::get('/admin/news/them-tin-tuc/', [App\Http\Controllers\HomeController::class, 'addOrEditnews']);
+Route::get('/admin/news/sua-tin-tuc/{id}', [App\Http\Controllers\HomeController::class, 'addOrEditnews']);
+Route::post('/admin/news/postNews', [App\Http\Controllers\HomeController::class, 'postAddOrEditNews'])->name('postAddOrEditNews');
+Route::get('/admin/news/delete/{id}', [App\Http\Controllers\HomeController::class, 'deleteNews']);

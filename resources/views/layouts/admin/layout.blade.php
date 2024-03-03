@@ -107,6 +107,9 @@
         Phẩm</a>
       <a href="/admin/them-san-pham/" class="w3-bar-item w3-button w3-padding"><i
           class="fa fa-plus"></i> Thêm Sản Phẩm</a>
+      <a href="/admin/news/" class="w3-bar-item w3-button w3-padding"><i class="fa fa-book"></i> Tin Tức</a>
+      <a href="/admin/news/them-tin-tuc/" class="w3-bar-item w3-button w3-padding"><i
+          class="fa fa-plus"></i> Thêm Tin Tức</a>
       <a href="{{ route('logout') }}" class="w3-bar-item w3-button w3-padding" onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">
         <i class="fa fa-sign-out"></i> <b>Đăng Xuất</b></a>

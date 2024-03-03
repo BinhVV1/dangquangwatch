@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\CategoryDetail;
+use App\Models\News;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,7 +27,7 @@ class HomeController extends Controller
 
     public function product(Request $request)
     {
-        $query = Product::query();
+        $query = Product::query()->orderBy('id', 'desc');
 
         if ($request->has('sex') && $request->input('sex') != '') {
             $query->where('sex', $request->input('sex'));
@@ -104,6 +104,7 @@ class HomeController extends Controller
     {
         // Create or update the product
         $productData = [
+            'noibat' => $request->input('noibat') ?? 1,
             'name' => $request->input('name'),
             'code' => $request->input('code'),
             'price' => $request->input('price'),
@@ -160,5 +161,71 @@ class HomeController extends Controller
         }
 
         return redirect('/admin')->with('success', $messer);
+    }
+
+    public function news(Request $request) {
+        $perPage = 20;
+        $data = News::query()->orderBy('id', 'desc')->paginate($perPage);
+
+        return view('admin.news', compact('data'));
+    }
+
+    public function addOrEditnews(Request $request, $id = '') {
+        $data = [];
+        if ($id) {
+            $data = News::where('id', $id)->get()->toArray();
+        }
+
+        return view('admin.addOrEditNews', compact('data'));
+    }
+
+    public function deleteNews($id) {
+        $product = News::find($id);
+
+        if ($product) {
+            Storage::delete($product->images);
+            News::destroy($id);
+
+            return redirect('/admin/news')->with('success', 'Xóa Sản Phẩm Thành Công.');
+        }
+
+        return redirect('/admin/news')->with('error', 'Xóa Sản Phẩm Thất bại! Vui Lòng Thử Lại');
+    }
+
+    public function postAddOrEditNews(Request $request) {
+        $productData = [
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+        ];
+
+        if ($request->file('images')) {
+            $mainImage = $request->file('images');
+    
+            if ($mainImage->getSize() > 1000000) {
+                return redirect()->back()->with('error', 'Kích thước ảnh chính phải nhỏ hơn 1MB')->withInput();
+            }
+    
+            $existingImagesMain = $request->has('id') ? News::find($request->input('id'))->images : '';
+    
+            if ($existingImagesMain) {
+                Storage::delete($existingImagesMain);
+            }
+    
+            $mainImage = $mainImage->store('public/images-product');
+            $productData['images'] = $mainImage;
+        }
+
+
+        if ($request->has('id')) {
+            // Update existing product
+            News::where('id', $request->input('id'))->update($productData);
+            $messer = 'Cập Nhập Thành Công';
+        } else {
+            // Create new product
+            News::create($productData);
+            $messer = 'Tạo Mới Thành Công';
+        }
+
+        return redirect('/admin/news/')->with('success', $messer);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\News;
 use App\Models\CategoryDetail;
 
 class ProductController extends Controller
@@ -16,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data = Product::limit(28)->get()->toArray();
+        $data = Product::limit(28)->orderBy('noibat', 'DESC')
+        ->orderby('id', 'DESC')->get()->toArray();
 
         return view('index', compact('data'));
     }
@@ -55,9 +57,9 @@ class ProductController extends Controller
                     $query->select('id')
                           ->from('category_detail')
                           ->where('name_category', 'like', '%' . $searchTerm . '%');
-                });
+                })->orderby('id', 'DESC');
         } else {
-            $query = Product::query();
+            $query = Product::query()->orderby('id', 'DESC');
 
             if ($request->has('gia') && $request->input('gia') != '') {
                 $priceRange = $request->input('gia');
@@ -135,7 +137,7 @@ class ProductController extends Controller
                         $query->where('sex', '=', $product[0]['sex'])
                             ->orWhere('trademark', '=', $product[0]['trademark'])
                             ->orWhere('material', '=', $product[0]['material']);
-                    })
+                    })->orderby('id', 'DESC')
                     ->limit(5)
                     ->get()
                     ->toArray(), 
@@ -153,9 +155,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function news()
     {
-        //
+        $perPage = 18;
+        $data = News::query()->orderby('id', 'DESC')->paginate($perPage);
+
+        return view('blog', compact('data'));
     }
 
     /**
@@ -164,9 +169,15 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function newsDetail(Request $request)
     {
-        //
+        $id = $request->input('id');
+        $data = News::where('id', $id)->get()->toArray();
+        $news = News::where('id','!=', $id)->orderby('created_at', 'DESC')->limit(5)->get()->toArray();
+        $previousPost = News::where('id', '<', $id)->orderBy('id', 'desc')->first();
+        $nextPost = News::where('id', '>', $id)->orderBy('id', 'asc')->first();
+
+        return view('blogDetail', compact('data', 'news', 'previousPost', 'nextPost'));
     }
 
     /**

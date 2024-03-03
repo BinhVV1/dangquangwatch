@@ -3,93 +3,75 @@
 @section('content')
         
     <!-- title page -->
-    <section class="flat-title-page inner"><div class="overlay"></div>
-        <div class="container">
+    <div class="ltn__slide-item ltn__breadcrumb-area ltn__breadcrumb-area-4 ltn__breadcrumb-color-white---">
+        <div class="container" style="padding-top:50px">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="page-title-heading center">
-                        <h2 class="heading">Tin Tức</h2>
-                        <div class="title-inner link-style-3">
-                            <h5 class=""><a class="home fw-4" href="/">Trang Chủ</a><span>Tin Tức</span></h5>
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner text-center">
+                        <h2 class="ltn__page-title">TIN TỨC</h2>
+                        <div class="ltn__breadcrumb-list">
+                            <ul>
+                                <li><a href="/">Trang Chủ</a></li>
+                                <li>Tin Tức</li>
+                            </ul>
                         </div>
-                    </div>                        
+                    </div>
                 </div>
-            </div>
-        </div>                    
-    </section>
-
-    <section class="tf-section flat-blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="blog-box tf-img hover-img hv-one">
-                        <a class="media img-style" href="https://laodong.vn/dinh-duong-am-thuc/nhung-loi-ich-khong-ngo-cua-viec-an-chan-ga-936741.ldo">
-                            <img class="img-item" src="assets/images/blog/blog-1.jpg" alt="">
-                            <span class="hover-one"></span>
-                        </a>
-                        <div class="content">
-                            <div class="days absolute">
-                                <div class="number">12</div>
-                                <div class="titles">Jan</div>
-                            </div>
-                            <h4><a href="https://laodong.vn/dinh-duong-am-thuc/nhung-loi-ich-khong-ngo-cua-viec-an-chan-ga-936741.ldo">Chia Sẻ</a></h4>
-                            <h3><a href="https://laodong.vn/dinh-duong-am-thuc/nhung-loi-ich-khong-ngo-cua-viec-an-chan-ga-936741.ldo">Những lợi ích không ngờ của việc ăn chân gà</a></h3>
-                            <p>Chân gà sả tắc, rút xương…là những món ăn rất ngon và tốt cho sức khỏe.</p>
-                            <div class="meta flex-one">
-                                <a href="https://laodong.vn/dinh-duong-am-thuc/nhung-loi-ich-khong-ngo-cua-viec-an-chan-ga-936741.ldo" class="btn-button flex fw-5">Xem Thêm</a>
-                                <a href="https://laodong.vn/dinh-duong-am-thuc/nhung-loi-ich-khong-ngo-cua-viec-an-chan-ga-936741.ldo" class="comment flex">107 Bình Luận</a>
-                            </div>
-                        </div>                                                              
-                    </div>                        
-                </div>
-                            
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="blog-box tf-img hover-img hv-one">
-                        <a class="media img-style" href="https://www.nhathuocankhang.com/ban-tin-suc-khoe/an-chan-ga-co-tot-khong-8-tac-dung-cua-chan-ga-1547011">
-                            <img class="img-item" src="assets/images/blog/blog-2.jpg" alt="">
-                            <span class="hover-one"></span>
-                        </a>
-                        <div class="content">
-                            <div class="days absolute">
-                                <div class="number">24</div>
-                                <div class="titles">May</div>
-                            </div>
-                            <h4><a href="https://www.nhathuocankhang.com/ban-tin-suc-khoe/an-chan-ga-co-tot-khong-8-tac-dung-cua-chan-ga-1547011">Chia Sẻ</a></h4>
-                            <h3><a href="https://www.nhathuocankhang.com/ban-tin-suc-khoe/an-chan-ga-co-tot-khong-8-tac-dung-cua-chan-ga-1547011">8 tác dụng của chân gà tốt cho sức khỏe</a></h3>
-                            <p>Chân gà là món ăn yêu thích của nhiều người bởi hương vị ngon</p>
-                            <div class="meta flex-one">
-                                <a href="https://www.nhathuocankhang.com/ban-tin-suc-khoe/an-chan-ga-co-tot-khong-8-tac-dung-cua-chan-ga-1547011" class="btn-button flex fw-5">Xem Thêm</a>
-                                <a href="https://www.nhathuocankhang.com/ban-tin-suc-khoe/an-chan-ga-co-tot-khong-8-tac-dung-cua-chan-ga-1547011" class="comment flex">94 Bình Luận</a>
-                            </div>
-                        </div>                                                               
-                    </div>                        
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="blog-box tf-img hover-img hv-one">
-                        <a class="media img-style" href="https://www.bachhoaxanh.com/kinh-nghiem-hay/cach-lam-chan-ga-cay-tu-xuyen-cay-ngon-chuan-vi-nguoi-hoa-1425349">
-                            <img class="img-item" src="assets/images/blog/blog-3.jpg" alt="">
-                            <span class="hover-one"></span>
-                        </a>
-                        <div class="content">
-                            <div class="days absolute">
-                                <div class="number">10</div>
-                                <div class="titles">June</div>
-                            </div>
-                            <h4><a href="https://www.bachhoaxanh.com/kinh-nghiem-hay/cach-lam-chan-ga-cay-tu-xuyen-cay-ngon-chuan-vi-nguoi-hoa-1425349">Bí Quyết</a></h4>
-                            <h3><a href="https://www.bachhoaxanh.com/kinh-nghiem-hay/cach-lam-chan-ga-cay-tu-xuyen-cay-ngon-chuan-vi-nguoi-hoa-1425349">Cách làm chân gà cay Tứ Xuyên cay ngon
-                            </a></h3>
-                            <p>Chân gà cay Tứ Xuyên cay giòn, thấm vị, ăn một lần là ghiền.</p>
-                            <div class="meta flex-one">
-                                <a href="https://www.bachhoaxanh.com/kinh-nghiem-hay/cach-lam-chan-ga-cay-tu-xuyen-cay-ngon-chuan-vi-nguoi-hoa-1425349" class="btn-button flex fw-5">Xem Thêm</a>
-                                <a href="https://www.bachhoaxanh.com/kinh-nghiem-hay/cach-lam-chan-ga-cay-tu-xuyen-cay-ngon-chuan-vi-nguoi-hoa-1425349" class="comment flex">54 Bình Luận</a>
-                            </div>
-                        </div>                                                              
-                    </div>                        
-                </div>
-
             </div>
         </div>
-    </section>
+    </div>
+    <div class="ltn__blog-area pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title-area text-center">
+                        <h1 class="section-title section-title-border">Tin Tức Mới Nhất</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($data as $item)
+                    @php
+                        $name = preg_replace('/[\/,?!@%#*&()^]+/', '-', $item['name']);
+                        $name = str_replace(' ', '-', strtolower($name));
+                        $link = preg_replace('/-+/', '-', trim($name, '-'));
+                    @endphp
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="ltn__blog-item">
+                            <div class="ltn__blog-img" style="max-height:250px; overflow:hidden; display:flex; align-items:center">
+                                <a href="/tin-tuc/{{ $link }}?id={{ $item['id'] }}"><img src="{{ asset('storage/images-product/' . basename($item['images'])) }}" alt="#"></a>
+                            </div>
+                            <div class="ltn__blog-brief">
+                                <div class="ltn__blog-meta">
+                                    <ul>
+                                        <li class="ltn__blog-author d-none">
+                                            <a href="#">by: 1993Watch</a>
+                                        </li>
+                                        <li>
+                                            <span>{{ \Carbon\Carbon::parse($item['created_at'])->format('d/m/Y') }}
+                                            </span>
+                                        </li>
+                                        <li class="ltn__blog-comment">
+                                            <a href="#"><i class="icon-note"></i> 1993Watch</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="ltn__blog-title blog-title-line"><a href="/tin-tuc/{{ $link }}?id={{ $item['id'] }}">{{ $item['name'] }} </a></h3>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__pagination-area text-center">
+                        <div class="ltn__pagination ltn__pagination-2" style="display: flex;justify-content: center;flex-wrap:wrap">
+                            {{ $data->appends(request()->query())->onEachSide(1)->links('pagination::bootstrap-4') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </div>
 @endsection
