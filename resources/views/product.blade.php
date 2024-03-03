@@ -66,7 +66,8 @@
                                             <div class="product-info">
                                                 <h2 class="product-title"><a href="san-pham/{{ $link }}?id={{ $item['id'] }}" style="overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;">{{ $item['name'] }}</a></h2>
                                                 <div class="product-price">
-                                                    <span style="font-size: 18px;">{{ $item['price'] }} đ</span>
+                                                    <del>{{ $item['price_old'] ? $item['price_old'] . ' đ' : ''}}</del>
+                                                    <span style="font-size: 18px !important;">{{ $item['price'] }} đ</span>
                                                 </div>
                                             </div>
                                         </div>

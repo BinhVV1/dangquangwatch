@@ -106,6 +106,7 @@ class HomeController extends Controller
         $productData = [
             'noibat' => $request->input('noibat') ?? 1,
             'name' => $request->input('name'),
+            'price_old' => $request->input('price_old'),
             'code' => $request->input('code'),
             'price' => $request->input('price'),
             'sex' => $request->input('sex'),

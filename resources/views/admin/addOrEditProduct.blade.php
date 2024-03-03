@@ -37,7 +37,14 @@
                 <div class="col-sm-3" style='color:gray'> Ví dụ: SRPH29K1</div>
             </div>
             <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
-                <div class="col-sm-2" style='font-weight:bold'>Giá Sản Phẩm:</div>
+                <div class="col-sm-2" style='font-weight:bold'>Giá Gốc:</div>
+                <div class="col-sm-6">
+                    <input type="text" name='price_old' class='form-control' value='{{ $data ? $data[0]['price_old'] : old('price_old') }}' required style="border:1px solid gray; color:gray; background:white">
+                </div>
+                <div class="col-sm-3" style='color:gray'> Ví dụ: 9.000.000</div>
+            </div>
+            <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
+                <div class="col-sm-2" style='font-weight:bold'>Giá Sau Giảm:</div>
                 <div class="col-sm-6">
                     <input type="text" name='price' class='form-control' value='{{ $data ? $data[0]['price'] : old('price') }}' required style="border:1px solid gray; color:gray; background:white">
                 </div>

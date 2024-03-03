@@ -10,39 +10,15 @@
 <div class="ltn__slider-area ltn__slider-3 ltn__slider-6">
     <div class="ltn__slide-two-active slick-slide-arrow-1 slick-slide-dots-1 arrow-white--">
         <!-- ltn__slide-item  -->
-        <div style="display:flex;" class="ltn__slide-item ltn__slide-item-8 ltn__slide-item-9--- text-color-white bg-image bg-overlay-theme-black-10---">
-            <div class="ltn__slide-item-inner text-center" style="position:absolute;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 align-self-center">
-                            <div class="slide-item-info">
-                                <div class="slide-item-info-inner ltn__slide-animation">
-                                    <div class="slide-item-info">
-                                        <div class="slide-item-info-inner ltn__slide-animation">
-                                            <h6 class="slide-sub-title slide-title-line-2--- animated" style="color:black; font-weight:bold">1993Watch</h6>
-                                            <h1 class="slide-title animated " style="color:#DCCCBD;text-shadow: 2px 2px 4px #000000;">Nâng Tầm <br>Phong Cách</h1>
-                                            <div class="btn-wrapper animated">
-                                                <a href="service.html" class="theme-btn-1 btn btn-round" style="background:black;color:#DCCCBD">Xem Ngay</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        @for ($i=1; $i<4; $i++)
+            <div style="display:flex;background:#DCCCBD" class="ltn__slide-item ltn__slide-item-8 ltn__slide-item-9--- text-color-white bg-image bg-overlay-theme-black-10---">
+                <img class='header-search-2' style="width:100%" src="{{ asset('app/img/banner/slide' . $i . '.jpg') }}">
+                <img class='header-search-1' style="width:100%" src="{{ asset('app/img/banner/slide' . $i . '_sp.jpg') }}">
             </div>
-            <video class="header-search-2" width="100%" videotitle="Ref. 5260/355R-001 / Home Banner Desktop" preload="" data-title="Ref. 5260/355R-001 / Home Banner Desktop" tabindex="-1" playsinline="" muted="" loop="" autoplay="">
-                <source type="video/mp4" src="https://static.patek.com/videos/articles/5260_355R_001/PP_5260_355R_001_banner-desktop_6850_0.mp4" label="HomeBannerDesktop5260355R" res="5260355">
-            </video>
-            <video  class="header-search-1"  width="100%" videotitle="Ref. 5260/355R-001 / Home Banner Desktop" preload="" data-title="Ref. 5260/355R-001 / Home Banner Desktop" tabindex="-1" playsinline="" muted="" loop="" autoplay="">
-                <source type="video/mp4" src="https://static.patek.com/videos/articles/5260_355R_001/PP_5260_355R_001_banner-mobile_6849_0.mp4" label="HomeBannerDesktop5260355R" res="5260355">
-            </video>
-        </div>
+        @endfor
         <!--  -->
     </div>
 </div>
-<!-- SLIDER AREA END -->
 <!-- PRODUCT AREA START -->
 <div class="ltn__product-area ltn__product-gutter  pt-30 pb-40---">
     <div class="container">
@@ -67,18 +43,24 @@
                             <a href="/san-pham/{{ $link }}?id={{ $item['id'] }}" class='anh-san-pham' style="overflow: hidden; display:flex">
                                 <img class="img" style="width: 100%; height: auto; object-fit: cover;" src="{{ asset('storage/images-product/' . basename($item['images_main'])) }}" alt="">
                             </a>
-                            @if ($item['noibat'] == 2)
-                                <div class="product-badge">
-                                    <ul>
+                            <div class="product-badge">
+                                @if ($item['noibat'] == 2)
+                                    <ul style="display: flex;justify-content: flex-start;">
                                         <li class="badge-1" style="color:black">HOT</li>
                                     </ul>
-                                </div>
-                            @endif
+                                @endif
+                                @if ($item['price_old'])
+                                    <ul>
+                                        <li class="badge-1" style="color:black">SALE</li>
+                                    </ul>
+                                @endif
+                            </div>
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="san-pham/{{ $link }}?id={{ $item['id'] }}" style="overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;">{{ $item['name'] }}</a></h2>
                             <div class="product-price">
-                                <span style="font-size: 18px;">{{ $item['price'] }} đ</span>
+                                <del>{{ $item['price_old'] ? $item['price_old'] . ' đ' : ''}}</del>
+                                <span style="font-size: 18px !important;">{{ $item['price'] }} đ</span>
                             </div>
                         </div>
                     </div>

@@ -265,7 +265,7 @@
         <div class="footer-top-area section-bg-5" style="background:#DCCCBD; padding-top:40px;">
             <div class="container">
                 <div class="row">
-                    <div class="header-search-1 col-xl-4 col-md-6 col-sm-6 col-12" style="border-bottom:1px solid #c0b1b1">
+                    <div class="header-search-3 col-xl-4 col-md-6 col-sm-6 col-12" style="border-bottom:1px solid #c0b1b1">
                         <div class="footer-widget footer-about-widget">
                             <h4 class="footer-title" id="footer-title">         
                                 <a href="/"><img style="margin-top:-18px; margin-left:-27px;" id="logo_main" class="logo_main" src="{{ asset('assets/images/logo-01.png') }}" alt="Logo"></a>
@@ -358,7 +358,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="header-search-2 col-xl-4 col-md-6 col-sm-6 col-12">
+                    <div class="header-search-4 col-xl-4 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget footer-about-widget">
                             <h4 class="footer-title" style="margin:0;">         
                                 <a href="/"><img style="margin-top:-18px;margin-left:-27px;" class="logo_main" src="{{ asset('assets/images/logo-01.png') }}" alt="Logo"></a>

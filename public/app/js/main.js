@@ -326,8 +326,8 @@
 
         /* ltn__slide-two-active */
         $('.ltn__slide-two-active').slick({
-            autoplay: false,
-            autoplaySpeed: 2000,
+            autoplay: true,
+            autoplaySpeed: 6000,
             arrows: false,
             dots: true,
             fade: true,
@@ -343,7 +343,7 @@
                     breakpoint: 1200,
                     settings: {
                         arrows: false,
-                        dots: true,
+                        dots: false,
                     }
                 }
             ]

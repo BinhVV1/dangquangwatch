@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('code');
             $table->string('price');
+            $table->string('price_old');
             $table->integer('sex');
             $table->integer('trademark');
             $table->integer('material');

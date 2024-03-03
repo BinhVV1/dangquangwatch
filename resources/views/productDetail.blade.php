@@ -78,7 +78,8 @@
                                     <ul>
                                         <li>
                                             <div class="product-price">
-                                                <h1><span style="font-size: 18px; font-weight:200">Giá: </span>{{ $product[0]['price'] }} đ</h1>
+                                                <del>{{ $product[0]['price_old'] ? $product[0]['price_old'] . ' đ' : ''}}</del>
+                                                <h1><span style="font-size: 18px; font-weight:200"></span>{{ $product[0]['price'] }} đ</h1>
                                             </div>
                                         </li>
                                     </ul>
@@ -190,7 +191,8 @@
                         <div class="product-info">
                             <h2 class="product-title"><a href="/san-pham/{{ $link }}?id={{ $value['id'] }}" style="overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;">{{ $value['name'] }}</a></h2>
                             <div class="product-price">
-                                <span>{{ $value['price'] }}</span>
+                                <del>{{ $value['price_old'] ? $value['price_old'] . ' đ' : ''}}</del>
+                                <span style="font-size: 18px !important;">{{ $value['price'] }} đ</span>
                             </div>
                         </div>
                     </div>
