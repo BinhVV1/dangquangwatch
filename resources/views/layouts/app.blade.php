@@ -435,6 +435,7 @@
     <script src="js/main.js"></script>
     <script src="{{ asset('app/js/plugins.js?v=1.1') }}"></script>
     <script src="{{ asset('app/js/main.js?v=1.1') }}"></script>
+    @include('iconChat.help')  
 </body>
 </html>
 
