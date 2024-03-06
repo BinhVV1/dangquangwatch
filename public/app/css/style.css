@@ -3201,6 +3201,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .footer-address-info p{
   color: #000 !important;
 }
+.ltn__related-product-slider-one-active .slick-track {
+  align-items:flex-start
+}
 .ltn__breadcrumb-area {
   background-color: var(--white-13);
   margin-bottom: 100px;

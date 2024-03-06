@@ -15,6 +15,12 @@
 
     <!-- Place favicon.png in the root directory -->
     <link rel="shortcut icon" href="{{ asset('assets/images/logo3-01.png') }}" type="image/x-icon">
+    <style>
+        img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+            display: none;
+        }
+        img[alt="www.000webhost.com"]{display:none;}
+    </style>
 </head>
 
 <body>

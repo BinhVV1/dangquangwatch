@@ -100,16 +100,53 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="ltn__social-media mb-30">
+                                <div class="ltn__social-media">
                                     <ul>
-                                        <li class="d-meta-title">Share:</li>
-                                        <li><a href="#" title="Facebook"><i class="icon-social-facebook"></i></a></li>
-                                        <li><a href="#" title="Twitter"><i class="icon-social-twitter"></i></a></li>
-                                        <li><a href="#" title="Pinterest"><i class="icon-social-pinterest"></i></a></li>
-                                        <li><a href="#" title="Instagram"><i class="icon-social-instagram"></i></a></li>
-                                        
+                                        <li class="d-meta-title">Các chính sách tại 1993Watch:</li>
                                     </ul>
-                                </div>
+                                </div>                           
+                                <div class="col-sm-12 row" style="margin:0; padding:0;">
+                                    <div class="col-sm-6" style="margin:0; padding:5px">
+                                        <div style="height:100%;gap:10px; padding:10px 15px; margin:0; display:flex; border:1.5px solid #DCCCBD; border-radius:10px;">
+                                            <div class="feature-icon" style="width:50px;display:flex;align-items:center">
+                                                <img src="{{asset('app/img/icon/distribution.png') }}" alt="#">
+                                            </div>
+                                            <div class="feature-info" style="display:flex;align-items:center">
+                                                <h4 style='margin:0;font-weight:bold; text-align:left; font-size:15px'>Đổi trả lên đến 30 ngày</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" style="margin:0; padding:5px">
+                                        <div style="height:100%;gap:10px; padding:10px 15px; margin:0; display:flex; border:1.5px solid #DCCCBD; border-radius:10px;">
+                                            <div class="feature-icon" style="width:50px;display:flex;align-items:center">
+                                                <img src="{{asset('app/img/icon/guarantee.png') }}" alt="#">
+                                            </div>
+                                            <div class="feature-info" style="display:flex;align-items:center">
+                                                <h4 style='margin:0;font-weight:bold; text-align:left; font-size:15px'>Bảo hành 2 năm</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" style="margin:0; padding:5px">
+                                        <div style="height:100%;gap:10px; padding:10px 15px; margin:0; display:flex; border:1.5px solid #DCCCBD; border-radius:10px;">
+                                            <div class="feature-icon" style="width:50px;display:flex;align-items:center">
+                                                <img src="{{asset('app/img/icon/goods.png') }}" alt="#">
+                                            </div>
+                                            <div class="feature-info" style="display:flex;align-items:center">
+                                                <h4 style='margin:0;font-weight:bold; text-align:left; font-size:15px'>Được kiểm tra trước khi nhận</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6" style="margin:0; padding:5px">
+                                        <div style="height:100%;gap:10px; padding:10px 15px; margin:0; display:flex; border:1.5px solid #DCCCBD; border-radius:10px;">
+                                            <div class="feature-icon" style="width:50px;display:flex;align-items:center">
+                                                <img src="{{asset('app/img/icon/free-delivery.png') }}" alt="#">
+                                            </div>
+                                            <div class="feature-info" style="display:flex;align-items:center">
+                                                <h4 style='margin:0;font-weight:bold; text-align:left; font-size:15px'>Free Ship toàn quốc</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>     
                             </div>
                         </div>
                     </div>
@@ -128,10 +165,10 @@
                 <div class="ltn__shop-details-tab-inner">
                     <div class="ltn__shop-details-tab-menu">
                         <div class="nav" style="gap:10px;">
-                            <a class="active show" data-bs-toggle="tab" href="#liton_tab_details_1_1">Thông Tin</a>
+                            <a class="active show" data-bs-toggle="tab" href="#liton_tab_details_1_1">Thông Tin Sản Phẩm</a>
                             <a data-bs-toggle="tab" href="#liton_tab_details_1_2" class="">Giới Thiệu</a>
                             <!-- <a data-bs-toggle="tab" href="#liton_tab_details_1_3" class="">Comments</a> -->
-                            <a data-bs-toggle="tab" href="#liton_tab_details_1_4" class="">Chính Sách</a>
+                            {{-- <a data-bs-toggle="tab" href="#liton_tab_details_1_4" class="">Chính Sách</a> --}}
                             <!-- <a data-bs-toggle="tab" href="#liton_tab_details_1_5" class="">Size Chart</a> -->
                         </div>
                     </div>
@@ -146,7 +183,7 @@
                                 <p>{!! $product[0]['description'] !!}</p>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="liton_tab_details_1_4">
+                        {{-- <div class="tab-pane fade" id="liton_tab_details_1_4">
                             <div class="ltn__shop-details-tab-content-inner">
                                 <h4 class="title-2">Chính Sách Khi Mua Hàng Tại 1993Watch</h4>
                                 <ul>
@@ -157,7 +194,7 @@
                                     <li>Hỗ trợ, tư vấn, giải đáp thắc mắc 24/7</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
