@@ -14,7 +14,7 @@
 <div class="">
    <div class='col-lg-12' style="padding: 16px; width:100%">
     <section class="tf-section flat-blog" style='padding:0'>
-        <form action="/admin/postAddOrEditProduct/" class="form" method="post" enctype="multipart/form-data">
+        <form action="{{ route('postAddOrEditProduct') }}" class="form" method="post" enctype="multipart/form-data">
             @csrf 
             @if(isset($data) && !empty($data))
                 <input type="hidden" name='id' value='{{ $data[0]['id'] }}'>
@@ -105,7 +105,7 @@
                 <div class="col-sm-2" style='font-weight:bold'>List Ảnh Phụ:</div>
                 <div class="col-sm-6">
                     @if($data && $data[0]['images'])
-                        <div style="gap: 10px; margin-bottom:20px; display:flex; align-items:flex-end">
+                        <div style="gap: 10px; margin-bottom:20px; display:flex; align-items:flex-end;flex-wrap: wrap;">
                             @foreach(explode(',', $data[0]['images']) as $value)
                                 <div style="width: 22%;display: flex;justify-content: center;flex-wrap: wrap;">
                                     <img style="width: 100%; margin-bottom:10px;" src="{{ asset('storage/images-product/' . basename($value)) }}" alt="">

@@ -67,6 +67,8 @@
                                                         <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=day-titanium">Dây Titanium</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=day-vai">Dây vải</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=silicone">Silicone</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nam&day%5B%5D=su-boc-da">Su bọc da</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>THƯƠNG HIỆU</a>
@@ -104,6 +106,8 @@
                                                         <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=day-titanium">Dây Titanium</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=day-vai">Dây vải</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=silicone">Silicone</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=nu&day%5B%5D=su-boc-da">Su bọc da</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>THƯƠNG HIỆU</a>
@@ -141,6 +145,8 @@
                                                         <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=day-titanium">Dây Titanium</a></li>
                                                         <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=day-vai">Dây vải</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=silicone">Silicone</a></li>
+                                                        <li><a href="/san-pham?loai%5B%5D=cap-doi&day%5B%5D=su-boc-da">Su bọc da</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a>THƯƠNG HIỆU</a>
@@ -167,6 +173,7 @@
                                                 </div>
                                                 <div class="header-search-1-form" style="right: 135px;">
                                                     <form id="#234" method="get"  action="/san-pham">
+                                                        @csrf
                                                         <input type="text" name="timkiem" value="{{ $search ?? '' }}" placeholder="Search here..."/>
                                                         <button type="submit">
                                                             <span><i class="icon-magnifier"></i></span>
@@ -187,6 +194,7 @@
                                     <!-- header-search-2 -->
                                     <div class="header-search-2">
                                         <form id="#234" method="get"  action="/san-pham">
+                                            @csrf
                                             <input type="text" name="timkiem" value="{{ $search ?? '' }}" placeholder="Search here..."/>
                                             <button type="submit">
                                                 <span><i class="icon-magnifier"></i></span>
@@ -214,6 +222,7 @@
                     <div class="ltn__newsletter-inner ltn__newsletter-inner-4 text-color-white text-center">
                         <h2>SẢN PHẨM CHO RIÊNG BẠN</h2>
                         <form action="/san-pham" class="ltn__form-box">
+                            @csrf
                             <input type="text" name="timkiem" value="{{ $search ?? '' }}" placeholder="Search here..."/>
                             <div class="btn-wrapper">
                                 <button class="theme-btn-1 btn text-uppercase" type="submit">Tìm Kiếm</button>
@@ -334,6 +343,8 @@
                                     <li><a href="/san-pham?day%5B%5D=day-nhua-cao-su">Dây nhựa / Cao su</a></li>
                                     <li><a href="/san-pham?day%5B%5D=day-titanium">Dây Titanium</a></li>
                                     <li><a href="/san-pham?day%5B%5D=day-vai">Dây vải</a></li>
+                                    <li><a href="/san-pham?day%5B%5D=silicone">Silicone</a></li>
+                                    <li><a href="/san-pham?day%5B%5D=su-boc-da">Su bọc da</a></li>
                                 </ul>
                             </div>
                         </div>
