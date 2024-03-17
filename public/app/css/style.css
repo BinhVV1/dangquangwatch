@@ -488,6 +488,17 @@ p {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto; }
+  
+.hot, .sale {
+  width:85px;
+}
+.product-badge{
+  top:-14px !important;
+  left:-24px !important;
+}
+.product-badge ul {
+  margin-bottom:-12px !important;
+}
 
 a {
   color: inherit;

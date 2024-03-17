@@ -7,15 +7,29 @@
     </div>
 @endif
 <!-- SLIDER AREA START (slider-6) -->
-<div class="ltn__slider-area ltn__slider-3 ltn__slider-6">
+<div class="ltn__slider-area ltn__slider-3 ltn__slider-6 header-search-22">
     <div class="ltn__slide-two-active slick-slide-arrow-1 slick-slide-dots-1 arrow-white--">
         <!-- ltn__slide-item  -->
-        @for ($i=1; $i<4; $i++)
-            <div style="display:flex;background:#DCCCBD" class="ltn__slide-item ltn__slide-item-8 ltn__slide-item-9--- text-color-white bg-image bg-overlay-theme-black-10---">
-                <img class='header-search-2' style="width:100%" src="{{ asset('app/img/banner/slide' . $i . '.jpg') }}">
-                <img class='header-search-1' style="width:100%" src="{{ asset('app/img/banner/slide' . $i . '_sp.jpg') }}">
-            </div>
-        @endfor
+        @if ($slide[0]['images'])
+            @foreach(explode(',', $slide[0]['images']) as $value)
+                <div style="display:flex;background:#DCCCBD" class="ltn__slide-item ltn__slide-item-8 ltn__slide-item-9--- text-color-white bg-image bg-overlay-theme-black-10---">
+                    <img style="width:100%" src="{{ asset('storage/images-product/' . basename($value)) }}">
+                </div>
+            @endforeach
+        @endif
+        <!--  -->
+    </div>
+</div>
+<div class="ltn__slider-area ltn__slider-3 ltn__slider-6 header-search-11">
+    <div class="ltn__slide-two-active slick-slide-arrow-1 slick-slide-dots-1 arrow-white--">
+        <!-- ltn__slide-item  -->
+        @if ($slide[0]['images_sp'])
+            @foreach(explode(',', $slide[0]['images_sp']) as $value)
+                <div style="display:flex;background:#DCCCBD" class="ltn__slide-item ltn__slide-item-8 ltn__slide-item-9--- text-color-white bg-image bg-overlay-theme-black-10---">
+                    <img style="width:100%" src="{{ asset('storage/images-product/' . basename($value)) }}">
+                </div>
+            @endforeach
+        @endif
         <!--  -->
     </div>
 </div>
@@ -43,18 +57,18 @@
                             <a href="/san-pham/{{ $link }}?id={{ $item['id'] }}" class='anh-san-pham' style="overflow: hidden; display:flex">
                                 <img class="img" style="width: 100%; height: auto; object-fit: cover;" src="{{ asset('storage/images-product/' . basename($item['images_main'])) }}" alt="">
                             </a>
-                            <div class="product-badge">
-                                @if ($item['noibat'] == 2)
-                                    <ul style="display: flex;justify-content: flex-start;">
-                                        <li class="badge-1" style="color:black">HOT</li>
-                                    </ul>
-                                @endif
-                                @if ($item['price_old'])
-                                    <ul>
-                                        <li class="badge-1" style="color:black">SALE</li>
-                                    </ul>
-                                @endif
-                            </div>
+                        </div>
+                        <div class="product-badge">
+                            @if ($item['noibat'] == 2)
+                                <ul style="display: flex;justify-content: flex-start;">
+                                    <li class="badge-1" style="color:black;background:none"><img class="hot" src="{{ asset('app/img/hot.png') }}"></li>
+                                </ul>
+                            @endif
+                            @if ($item['price_old'])
+                                <ul>
+                                    <li class="badge-1" style="color:black; background:none"><img class="sale" src="{{ asset('app/img/sale.png') }}"></li>
+                                </ul>
+                            @endif
                         </div>
                         <div class="product-info">
                             <h2 class="product-title"><a href="san-pham/{{ $link }}?id={{ $item['id'] }}" style="overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;">{{ $item['name'] }}</a></h2>

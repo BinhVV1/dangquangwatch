@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => '1993Watch',
             'email' => 'admin@1993watch.com',
+            'password' => bcrypt('Quangteo1@'),
         ]);
     }
 }

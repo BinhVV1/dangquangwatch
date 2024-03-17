@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\News;
+use App\Models\Slide;
 use App\Models\CategoryDetail;
 
 class ProductController extends Controller
@@ -19,8 +20,9 @@ class ProductController extends Controller
     {
         $data = Product::limit(28)->orderBy('noibat', 'DESC')
         ->orderby('id', 'DESC')->get()->toArray();
+        $slide = Slide::get()->toArray();
 
-        return view('index', compact('data'));
+        return view('index', compact('data','slide'));
     }
 
     /**
@@ -35,7 +37,7 @@ class ProductController extends Controller
 
         if ($request->has('timkiem') && $request->input('timkiem') != '') {
             $searchTerm = $request->input('timkiem');
-        
+
             // $categories = CategoryDetail::where('name_category', 'like', '%'.$searchTerm.'%')->pluck('id')->toArray();
             // $query = Product::where('name', 'like', '%' . $searchTerm . '%')
             // ->orWhereIn('sex', $categories)
@@ -79,14 +81,14 @@ class ProductController extends Controller
                         break;
                     case 'tren-3tr':
                         $minPrice = 3000000;
-                        $maxPrice = 9999999999; 
+                        $maxPrice = 9999999999;
                         break;
                     default:
                         $minPrice = 0;
                         $maxPrice = 9999999999;
                         break;
                 }
-                
+
                 $query->whereRaw("REPLACE(REPLACE(price, ',', ''), '.', '') >= ? AND REPLACE(REPLACE(price, ',', ''), '.', '') <= ?", [$minPrice, $maxPrice]);
             }
 
@@ -129,7 +131,7 @@ class ProductController extends Controller
         $category = CategoryDetail::WhereIn('id', $array)->get()->toArray();
 
         if (empty($product)) {
-            return redirect('/')->with('error','Sản Phẩm Không Tồn Tại'); 
+            return redirect('/')->with('error','Sản Phẩm Không Tồn Tại');
         } else {
             $data = [
                 'data' => Product::where('id', '!=', $id)
@@ -140,7 +142,7 @@ class ProductController extends Controller
                     })->orderby('id', 'DESC')
                     ->limit(5)
                     ->get()
-                    ->toArray(), 
+                    ->toArray(),
                 'product' => $product,
                 'category' => $category
             ];

@@ -110,6 +110,7 @@
       <a href="/admin/news/" class="w3-bar-item w3-button w3-padding"><i class="fa fa-book"></i> Tin Tức</a>
       <a href="/admin/news/them-tin-tuc/" class="w3-bar-item w3-button w3-padding"><i
           class="fa fa-plus"></i> Thêm Tin Tức</a>
+      <a href="/admin/slide" class="w3-bar-item w3-button w3-padding"><i class="fa fa-book"></i> Banner</a>
       <a href="{{ route('logout') }}" class="w3-bar-item w3-button w3-padding" onclick="event.preventDefault();
         document.getElementById('logout-form').submit();">
         <i class="fa fa-sign-out"></i> <b>Đăng Xuất</b></a>
@@ -170,7 +171,7 @@
       mySidebar.style.display = "none";
       overlayBg.style.display = "none";
     }
-     
+
     document.addEventListener('DOMContentLoaded', function () {
     ClassicEditor
         .create(document.querySelector('#editor'))

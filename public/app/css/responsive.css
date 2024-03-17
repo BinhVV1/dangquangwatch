@@ -7,7 +7,7 @@
         max-width: 1200px;
     }
 
-    .header-search-1,.header-search-3 {
+    .header-search-1,.header-search-3, .header-search-11 {
         display: none !important;
     }
 
@@ -24,7 +24,7 @@
     .logo_main {
         max-width: 85%;
     }
-    .header-search-1,.header-search-3 {
+    .header-search-1,.header-search-3, .header-search-11 {
         display: none !important;
     }
 }
@@ -53,12 +53,12 @@
     h6 {
         font-size: 16px;
     }
-    .header-search-1,.header-search-3 {
+    .header-search-1,.header-search-3, .header-search-11 {
         display: none !important;
     }
 }
 
- 
+
 /* Tablet device :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
     .anh-san-pham{
@@ -89,12 +89,12 @@
     p {
         font-size: 14px;
     }
-    .header-search-2,.header-search-4 {
+    .header-search-2,.header-search-4,.header-search-22 {
         display: none !important;
     }
 }
 
- 
+
 /* small mobile :320px. */
 @media (max-width: 767px) {
     .product-price > span{
@@ -134,12 +134,12 @@
     p {
         font-size: 14px;
     }
-    
+
     .logo_main {
         max-width: 60%;
     }
-    .header-search-2,.header-search-4 {
-        display: none !important; 
+    .header-search-2,.header-search-4,.header-search-22 {
+        display: none !important;
     }
     .home {
         display: none !important;
@@ -157,6 +157,10 @@
     .ltn__header-8 .ltn__main-menu > ul > li {
         margin-right: 0px !important;
     }
+    .header-search-11 {
+        display: block !important;
+    }
+
     .header-search-1 {
         display: flex !important;
         align-items: center !important;
@@ -188,7 +192,7 @@
         border-radius: 5px !important;
     }
     .ltn__banner{
-        padding: 5px !important;    
+        padding: 5px !important;
     }
     .feature-info br{
         display:none;
@@ -243,7 +247,17 @@
     .blog-prev{
         margin: 0 !important;
     }
+    .hot, .sale {
+        width:50px;
+    }
+    .product-badge{
+        top:-11px !important;
+        left:-18px !important;
+    }
+    .product-badge ul {
+        margin-bottom:-10px !important;
+    }
 }
-.header-search-2,.header-search-4 {
+.header-search-2,.header-search-4,.header-search-22 {
 padding: 0 !important;
 }

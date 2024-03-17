@@ -29,7 +29,7 @@
                         <li>
                             <div class="showing-product-number text-right">
                                  <span>Có {{$count}} Sản Phẩm Phù Hợp</span>
-                             </div> 
+                             </div>
                          </li>
                         <li>
                             <div class="ltn__grid-list-tab-menu ">
@@ -37,7 +37,7 @@
                                     <a class="active show" data-bs-toggle="tab" href="#liton_product_grid"><i class="icon-grid"></i></a>
                                     <a data-bs-toggle="tab" href="#liton_product_list"><i class="icon-magnifier"></i></a>
                                 </div>
-                            </div> 
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -92,6 +92,7 @@
                                 <div class="col-lg-12 header-search-3">
                                     <aside class="sidebar ltn__shop-sidebar">
                                         <form action="/san-pham" class="form" method="get" enctype="multipart/form-data">
+                                            @csrf
                                             <!-- Price Filter Widget -->
                                             <div class="widget ltn__price-filter-widget" style="margin-bottom:100px">
                                                 <h4 class="ltn__widget-title">Khoảng Giá</h4>
@@ -109,28 +110,28 @@
                                             <div class="widget ltn__menu-widget">
                                                 <h4 class="ltn__widget-title">Phân Loại</h4>
                                                 <div class="price_slider_amount" style="overflow:unset; display: flex; flex-wrap:wrap; gap:20px">
-                                                    @foreach($category as $value) 
+                                                    @foreach($category as $value)
                                                         @if ($value['id_category'] == 1)
                                                             <div>
                                                                 <input  type="checkbox" name="loai[]" value="{{ $value['name_code'] }}" {{ in_array($value['name_code'], request()->input('loai', [])) == $value['name_code'] ? 'checked' : '' }}>
                                                                 {{ $value['name_category'] }}
                                                             </div>
                                                         @endif
-                                                    @endforeach 
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <!-- Color Widget -->
                                             <div class="widget ltn__color-widget">
                                                 <h4 class="ltn__widget-title">Chất Liệu Dây</h4>
                                                 <div class="price_slider_amount" style="overflow:unset; display: flex; flex-wrap:wrap; gap:20px">
-                                                    @foreach($category as $value) 
-                                                        @if ($value['id_category'] == 3) 
+                                                    @foreach($category as $value)
+                                                        @if ($value['id_category'] == 3)
                                                             <div>
                                                                 <input  type="checkbox" name="day[]" value="{{ $value['name_code'] }}" {{ in_array($value['name_code'], request()->input('day', [])) == $value['name_code'] ? 'checked' : '' }}>
                                                                 {{ $value['name_category'] }}
                                                             </div>
                                                         @endif
-                                                    @endforeach 
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <!-- Size Widget -->
@@ -138,14 +139,14 @@
                                                 <h4 class="ltn__widget-title">Thương Hiệu
                                                 </h4>
                                                 <div class="price_slider_amount" style="overflow:unset; display: flex; flex-wrap:wrap; gap:20px">
-                                                    @foreach($category as $value) 
-                                                        @if ($value['id_category'] == 2) 
+                                                    @foreach($category as $value)
+                                                        @if ($value['id_category'] == 2)
                                                             <div>
                                                                 <input  type="checkbox" name="thuonghieu[]" value="{{ $value['name_code'] }}" {{ in_array($value['name_code'], request()->input('thuonghieu', [])) == $value['name_code'] ? 'checked' : '' }}>
                                                                 {{ $value['name_category'] }}
                                                             </div>
                                                         @endif
-                                                    @endforeach 
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <div class="widget ltn__size-widget">
@@ -162,6 +163,7 @@
             <div class="col-lg-3 mb-100 header-search-4">
                 <aside class="sidebar ltn__shop-sidebar">
                     <form action="/san-pham" class="form" method="get" enctype="multipart/form-data">
+                        @csrf
                         <!-- Price Filter Widget -->
                         <div class="widget ltn__price-filter-widget" style="margin-bottom:100px">
                             <h4 class="ltn__widget-title">Khoảng Giá</h4>
@@ -179,28 +181,28 @@
                         <div class="widget ltn__menu-widget">
                             <h4 class="ltn__widget-title">Phân Loại</h4>
                             <div class="price_slider_amount" style="overflow:unset; display: flex; flex-wrap:wrap; gap:20px">
-                                @foreach($category as $value) 
+                                @foreach($category as $value)
                                     @if ($value['id_category'] == 1)
                                         <div>
                                             <input  type="checkbox" name="loai[]" value="{{ $value['name_code'] }}" {{ in_array($value['name_code'], request()->input('loai', [])) == $value['name_code'] ? 'checked' : '' }}>
                                             {{ $value['name_category'] }}
                                         </div>
                                     @endif
-                                @endforeach 
+                                @endforeach
                             </div>
                         </div>
                         <!-- Color Widget -->
                         <div class="widget ltn__color-widget">
                             <h4 class="ltn__widget-title">Chất Liệu Dây</h4>
                             <div class="price_slider_amount" style="overflow:unset; display: flex; flex-wrap:wrap; gap:20px">
-                                @foreach($category as $value) 
-                                    @if ($value['id_category'] == 3) 
+                                @foreach($category as $value)
+                                    @if ($value['id_category'] == 3)
                                         <div>
                                             <input  type="checkbox" name="day[]" value="{{ $value['name_code'] }}" {{ in_array($value['name_code'], request()->input('day', [])) == $value['name_code'] ? 'checked' : '' }}>
                                             {{ $value['name_category'] }}
                                         </div>
                                     @endif
-                                @endforeach 
+                                @endforeach
                             </div>
                         </div>
                         <!-- Size Widget -->
@@ -208,14 +210,14 @@
                             <h4 class="ltn__widget-title">Thương Hiệu
                             </h4>
                             <div class="price_slider_amount" style="overflow:unset; display: flex; flex-wrap:wrap; gap:20px">
-                                @foreach($category as $value) 
-                                    @if ($value['id_category'] == 2) 
+                                @foreach($category as $value)
+                                    @if ($value['id_category'] == 2)
                                         <div>
                                             <input  type="checkbox" name="thuonghieu[]" value="{{ $value['name_code'] }}" {{ in_array($value['name_code'], request()->input('thuonghieu', [])) == $value['name_code'] ? 'checked' : '' }}>
                                             {{ $value['name_category'] }}
                                         </div>
                                     @endif
-                                @endforeach 
+                                @endforeach
                             </div>
                         </div>
                         <div class="widget ltn__size-widget">
@@ -228,3 +230,4 @@
     </div>
 </div>
 @endsection
+

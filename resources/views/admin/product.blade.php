@@ -13,17 +13,18 @@
 <div class='col-lg-12' style="padding: 0; margin:0; display:flex;flex-wrap:wrap;">
     <div class='col-lg-12'  style="padding: 8px 15px; width:100%; height:100%; z-index:2">
         <form action="" class="col-sm-12" style="margin:0; padding:0;text-align:left">
+            @csrf
             <div class="col-sm-11" style="display:flex; gap:5px; margin:0; padding:0;justify-content:space-between">
                 <div class="col-sm-4" style="margin:0; padding:0;text-align:left">
                     <div style='font-weight:bold;margin:0; padding:0; width:100%;'>Loại:</div>
                     <div class="col-sm-12" style="margin:0; padding:0">
                         <select class="form-select" name="sex" style="margin:0; padding:5px">
                             <option value=""></option>
-                            @foreach($category as $value) 
-                                @if ($value['id_category'] == 1) 
+                            @foreach($category as $value)
+                                @if ($value['id_category'] == 1)
                                     <option value="{{ $value['id'] }}"  {{ request()->input('sex') == $value['id'] ? 'selected' : '' }}>{{ $value['name_category'] }}</option>
                                 @endif
-                            @endforeach 
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -32,11 +33,11 @@
                     <div class="col-sm-12" style="margin:0; padding:0">
                         <select class="form-select" name="trademark" style="margin:0; padding:5px">
                             <option value=""></option>
-                            @foreach($category as $value) 
-                                @if ($value['id_category'] == 2) 
+                            @foreach($category as $value)
+                                @if ($value['id_category'] == 2)
                                     <option value="{{ $value['id'] }}" {{ request()->input('trademark') == $value['id'] ? 'selected' : '' }}>{{ $value['name_category'] }}</option>
                                 @endif
-                            @endforeach 
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -45,11 +46,11 @@
                     <div class="col-sm-12" style="margin:0; padding:0">
                         <select class="form-select" name="material" style="margin:0; padding:5px">
                             <option value=""></option>
-                            @foreach($category as $value) 
-                                @if ($value['id_category'] == 3) 
+                            @foreach($category as $value)
+                                @if ($value['id_category'] == 3)
                                     <option value="{{ $value['id'] }}" {{ request()->input('material') == $value['id'] ? 'selected' : '' }} >{{ $value['name_category'] }}</option>
                                 @endif
-                            @endforeach 
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -82,17 +83,17 @@
                                             <a href="/admin/sua-san-pham/{{ $item['id'] }}" type="button" class="btn btn-primary" style='color:white; margin:auto; padding: 5px;'>Chỉnh Sửa</a>
                                             <a href="/admin/delete/{{ $item['id'] }}" type="button" class="btn btn-danger delete-btn" style='color:white;margin:auto;padding: 5px;'>Xóa</a>
                                         </div>
-                                    </div>                                                              
-                                </div>                        
+                                    </div>
+                                </div>
                             </div>
                         @endforeach
                     </div>
                 </div>
-            </section>           
+            </section>
         </div>
         <div style="width:100%; padding:15px;display:flex;justify-content:end">
             {{ $data->appends(request()->query())->onEachSide(1)->links('pagination::bootstrap-4') }}
-        </div> 
+        </div>
     @else
         <div class='col-lg-12' style="padding:16px; width:100%">
             Không Có Sản Phẩm Phù Hợp

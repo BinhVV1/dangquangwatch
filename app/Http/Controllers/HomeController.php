@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\News;
+use App\Models\Slide;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,6 +24,85 @@ class HomeController extends Controller
         $this->middleware('auth');
         $this->category = Category::join('category_detail','category.id', '=', 'category_detail.id_category')
         ->get()->toArray();
+    }
+
+    public function slide(Request $request)
+    {
+        $data = Slide::get()->toArray();
+        return view('admin.addSlide', compact('data'));
+    }
+
+    public function postSlide(Request $request)
+    {
+        if ($request->file('images')) {
+            $additionalImages = [];
+            $existingImages = $request->has('id') ? Slide::find($request->input('id'))->images : '';
+
+            foreach ($request->file('images') as $image) {
+                if ($image->getSize() > 2000000) {
+                    return redirect()->back()->with('error', 'Kích thước ảnh bổ sung phải nhỏ hơn 2MB')->withInput();
+                }
+
+                $additionalImages[] = $image->store('public/images-product');
+            }
+
+            $productData['images'] = $existingImages ? $existingImages . ',' . implode(',', $additionalImages) : implode(',', $additionalImages);
+        }
+
+        if ($request->file('images_sp')) {
+            $additionalImages_sp = [];
+            $existingImages_sp = $request->has('id') ? Slide::find($request->input('id'))->images_sp : '';
+
+            foreach ($request->file('images_sp') as $image) {
+                if ($image->getSize() > 2000000) {
+                    return redirect()->back()->with('error', 'Kích thước ảnh bổ sung phải nhỏ hơn 2MB')->withInput();
+                }
+
+                $additionalImages_sp[] = $image->store('public/images-product');
+            }
+
+            $productData['images_sp'] = $existingImages_sp ? $existingImages_sp . ',' . implode(',', $additionalImages_sp) : implode(',', $additionalImages_sp);
+
+        }
+
+        if ($request->has('id')) {
+            Slide::where('id', $request->input('id'))->update($productData);
+        } else {
+            Slide::create($productData);
+        }
+
+        return redirect()->back();
+    }
+
+    public function deleteSlide($dv, $id, $value)
+    {
+        $product = Slide::find($id);
+        $value = "public/images-product/{$value}";
+
+        if ($product) {
+            if ($dv == 'sp') {
+                $currentImages_sp = explode(',', $product->images_sp);
+                if (in_array($value, $currentImages_sp)) {
+                    $updatedImages = array_diff($currentImages_sp, [$value]);
+                    $product->update(['images_sp' => implode(',', $updatedImages)]);
+                    Storage::delete($value);
+
+                    return redirect()->back()->with('success', 'Đã Xóa Ảnh Thành Công');
+                }
+            } else {
+                $currentImages = explode(',', $product->images);
+                if (in_array($value, $currentImages)) {
+                    $updatedImages = array_diff($currentImages, [$value]);
+                    $product->update(['images' => implode(',', $updatedImages)]);
+                    Storage::delete($value);
+
+                    return redirect()->back()->with('success', 'Đã Xóa Ảnh Thành Công');
+                }
+            }
+
+        }
+
+        return redirect()->back()->with('error', 'Xóa Ảnh Thất bại! Vui Lòng Thử Lại');
     }
 
     public function product(Request $request)
@@ -96,7 +176,7 @@ class HomeController extends Controller
                 return redirect()->back()->with('success', 'Đã Xóa Ảnh Thành Công');
             }
         }
-    
+
         return redirect()->back()->with('error', 'Xóa Ảnh Thất bại! Vui Lòng Thử Lại');
     }
 
@@ -115,22 +195,22 @@ class HomeController extends Controller
             'information' => $request->input('information'),
             'subtitle' => $request->input('subtitle'),
             'description' => $request->input('description'),
-            'link' => $request->input('link'),            
+            'link' => $request->input('link'),
         ];
 
         if ($request->file('images_main')) {
             $mainImage = $request->file('images_main');
-    
-            if ($mainImage->getSize() > 1000000) {
-                return redirect()->back()->with('error', 'Kích thước ảnh chính phải nhỏ hơn 1MB')->withInput();
+
+            if ($mainImage->getSize() > 2000000) {
+                return redirect()->back()->with('error', 'Kích thước ảnh chính phải nhỏ hơn 2MB')->withInput();
             }
-    
+
             $existingImagesMain = $request->has('id') ? Product::find($request->input('id'))->images_main : '';
-    
+
             if ($existingImagesMain) {
                 Storage::delete($existingImagesMain);
             }
-    
+
             $mainImage = $mainImage->store('public/images-product');
             $productData['images_main'] = $mainImage;
         }
@@ -138,16 +218,16 @@ class HomeController extends Controller
         if ($request->file('images')) {
             $additionalImages = [];
             $existingImages = $request->has('id') ? Product::find($request->input('id'))->images : '';
-    
+
             foreach ($request->file('images') as $image) {
-                // Kiểm tra kích thước ảnh là dưới 1MB
-                if ($image->getSize() > 1000000) {
-                    return redirect()->back()->with('error', 'Kích thước ảnh bổ sung phải nhỏ hơn 1MB')->withInput();
+                // Kiểm tra kích thước ảnh là dưới 2MB
+                if ($image->getSize() > 2000000) {
+                    return redirect()->back()->with('error', 'Kích thước ảnh bổ sung phải nhỏ hơn 2MB')->withInput();
                 }
-    
+
                 $additionalImages[] = $image->store('public/images-product');
             }
-    
+
             $productData['images'] = $existingImages ? $existingImages . ',' . implode(',', $additionalImages) : implode(',', $additionalImages);
         }
 
@@ -201,17 +281,17 @@ class HomeController extends Controller
 
         if ($request->file('images')) {
             $mainImage = $request->file('images');
-    
-            if ($mainImage->getSize() > 1000000) {
-                return redirect()->back()->with('error', 'Kích thước ảnh chính phải nhỏ hơn 1MB')->withInput();
+
+            if ($mainImage->getSize() > 2000000) {
+                return redirect()->back()->with('error', 'Kích thước ảnh chính phải nhỏ hơn 2MB')->withInput();
             }
-    
+
             $existingImagesMain = $request->has('id') ? News::find($request->input('id'))->images : '';
-    
+
             if ($existingImagesMain) {
                 Storage::delete($existingImagesMain);
             }
-    
+
             $mainImage = $mainImage->store('public/images-product');
             $productData['images'] = $mainImage;
         }

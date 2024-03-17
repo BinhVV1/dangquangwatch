@@ -15,7 +15,7 @@
    <div class='col-lg-12' style="padding: 16px; width:100%">
     <section class="tf-section flat-blog" style='padding:0'>
         <form action="{{ route('postAddOrEditProduct') }}" class="form" method="post" enctype="multipart/form-data">
-            @csrf 
+            @csrf
             @if(isset($data) && !empty($data))
                 <input type="hidden" name='id' value='{{ $data[0]['id'] }}'>
             @else
@@ -53,22 +53,22 @@
             <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
                 <div class="col-sm-2" style='font-weight:bold'>Loại:</div>
                 <div class="col-sm-6" style='display:flex; gap:4px'>
-                    @foreach($category as $value) 
-                        @if ($value['id_category'] == 1) 
+                    @foreach($category as $value)
+                        @if ($value['id_category'] == 1)
                             <input style='margin:0;' type="radio" name="sex" required value="{{ $value['id'] }}" {{ ($data && $data[0]['sex'] ===  $value['id']) || old('sex') == $value['id']  ? 'checked' : '' }}><span style='margin-right:10px;'>{{ $value['name_category'] }} </span>
                         @endif
-                    @endforeach 
+                    @endforeach
                 </div>
             </div>
             <div class="col-sm-12" style="padding:15px; gap:10px;border-bottom:1px solid rgb(200, 200, 200);">
                 <div class="col-sm-2" style='font-weight:bold'>Thương Hiệu:</div>
                 <div class="col-sm-6">
                     <select class="form-select" name="trademark" required>
-                        @foreach($category as $value) 
-                            @if ($value['id_category'] == 2) 
+                        @foreach($category as $value)
+                            @if ($value['id_category'] == 2)
                                 <option value="{{ $value['id'] }}" {{ ($data && $data[0]['trademark'] === $value['id']) || old('trademark') == $value['id'] ? 'selected' : '' }}>{{ $value['name_category'] }}</option>
                             @endif
-                        @endforeach 
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -76,11 +76,11 @@
                 <div class="col-sm-2" style='font-weight:bold'>Chất Liệu Dây:</div>
                 <div class="col-sm-6">
                     <select class="form-select" name="material" required>
-                        @foreach($category as $value) 
-                            @if ($value['id_category'] == 3) 
+                        @foreach($category as $value)
+                            @if ($value['id_category'] == 3)
                                 <option value="{{ $value['id'] }}" {{ ($data && $data[0]['material'] === $value['id']) || old('material') == $value['id'] ? 'selected' : '' }}>{{ $value['name_category'] }}</option>
                             @endif
-                        @endforeach 
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
             errorMessage.style.display = 'none';
             errorMessage.style.opacity = 0;
         }, 5000);
-    }    
+    }
 });
 </script>
 @endsection

@@ -25,6 +25,7 @@ Route::get('/tin-tuc', [App\Http\Controllers\ProductController::class, 'news'])-
 Route::get('/tin-tuc/{link}', [App\Http\Controllers\ProductController::class, 'newsDetail'])->name('newsDetail');
 
 Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'product'])->name('product');
 Route::get('/admin/them-san-pham/', [App\Http\Controllers\HomeController::class, 'addProduct'])->name('addProduct');
@@ -38,3 +39,7 @@ Route::get('/admin/news/them-tin-tuc/', [App\Http\Controllers\HomeController::cl
 Route::get('/admin/news/sua-tin-tuc/{id}', [App\Http\Controllers\HomeController::class, 'addOrEditnews']);
 Route::post('/admin/news/postNews', [App\Http\Controllers\HomeController::class, 'postAddOrEditNews'])->name('postAddOrEditNews');
 Route::get('/admin/news/delete/{id}', [App\Http\Controllers\HomeController::class, 'deleteNews']);
+
+Route::get('/admin/slide', [App\Http\Controllers\HomeController::class, 'slide'])->name('slide');
+Route::post('/admin/postSlide', [App\Http\Controllers\HomeController::class, 'postSlide'])->name('postSlide');
+Route::get('/admin/delete-images-slide/{dv}/{id}/{value}', [App\Http\Controllers\HomeController::class, 'deleteSlide'])->name('deleteSlide');
